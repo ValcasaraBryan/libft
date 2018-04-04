@@ -3,7 +3,7 @@ Travail sur ft_memccpy.c
 
 
 
-Le fichier, copier une fuite de memoire dans destination.
+Le fichier, copie une fuite de memoire dans destination lorsque c ne correspond a aucun charactere et lorsque n est a zero.
 Le probleme vient surement des conditions d'iteration.
 
 
