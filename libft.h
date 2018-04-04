@@ -1,6 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   libft.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: brvalcas <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/04/04 17:12:51 by brvalcas          #+#    #+#             */
+/*   Updated: 2018/04/04 17:13:34 by brvalcas         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-#ifndef FT_HEADER_H
-# define FT_HEADER_H
+#ifndef LIBFT_H
+# define LIBFT_H
 
 # include <string.h>
 # include <stdio.h>
@@ -9,6 +20,9 @@
 # include <unistd.h>
 # include <ctype.h>
 # include <limits.h>
+
+# define 		TRUE	1
+# define		FALSE	0
 
 int				ft_putchar_(int c);
 void			ft_putchar(char c);
@@ -52,7 +66,7 @@ void			ft_striteri(char *s, void (*f)(unsigned int, char *));
 char			*ft_strmap(char const *s, char (*f)(char));
 char			*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 int				ft_strequ(char const *s1, char const *s2);
-int 			ft_strnequ(char const *s1, char const *s2, size_t n);
+int				ft_strnequ(char const *s1, char const *s2, size_t n);
 char			*ft_strsub(char const *s, unsigned int start, size_t len);
 char			*ft_strjoin(char const *s1, char const *s2);
 char			*ft_strtrim(char const *s);
@@ -60,7 +74,7 @@ char			**ft_strsplit(char const *s, char c);
 int				ft_compt_mot(char const *s, char c);
 char			*ft_itoa(int n);
 void			ft_putendl(char const *s);
-void 			ft_putnbr(int n);
+void			ft_putnbr(int n);
 void			ft_putchar_fd(char c, int fd);
 void			ft_putstr_fd(char const *s, int fd);
 void			ft_putendl_fd(char const *s, int fd);

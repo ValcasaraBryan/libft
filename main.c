@@ -1,4 +1,16 @@
-#include "ft_header.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: brvalcas <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/04/04 17:16:07 by brvalcas          #+#    #+#             */
+/*   Updated: 2018/04/04 18:28:02 by brvalcas         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
 
 int		main(void)
 {
@@ -60,6 +72,7 @@ int		main(void)
 		printf("%c", string_2[i++]);
 	i = 0;
 	c = 0;
+/*
 	while (c != INT_MAX && c != INT_MIN)
 	{
 		printf("\n--------------------------------");
@@ -91,8 +104,10 @@ int		main(void)
 		if (c <= -1)
 			break;
 	}
+*/
 	j = 1;
 	i = j;
+/*
 	while (j != INT_MAX)
 	{
 		printf("\n--------------------------------\n");
@@ -111,6 +126,7 @@ int		main(void)
 		if (c <= -1)
 			break;
 	}
+*/
 	printf("%s\n", strrchr(str_5, 97));
 	printf("%s\n\n", ft_strrchr(str_6, 97));
 
@@ -132,10 +148,10 @@ int		main(void)
 	printf("i = %d   j = %d\ntolower    = %d\n", i, j, tolower(i));
 	printf("ft_tolower = %d\n\n", ft_tolower(j));
 
-	char	src[7] = "salut";
-	char	dst[7] = "coucou";
-	char	src_2[7] = "salut";
-	char	dst_2[7] = "coucou";	
+	char	src[] = "test basic du memccpy !"; // 24
+	char	dst[22];
+	char	src_2[] = "test basic du memccpy !"; // 24
+	char	dst_2[22];	
 	char	src_3[7] = "salut";
 	char	dst_3[7] = "coucou";
 	char	src_4[7] = "salut";
@@ -147,8 +163,8 @@ int		main(void)
 	char	src_6[7] = "salut";
 	char	dst_6 = 'u';
 
-	c = 108;
-	i = 4;
+	c = 22;
+	i = 1;
 	void	*restrict x;
 	void	*restrict y;
 
