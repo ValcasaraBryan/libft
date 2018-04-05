@@ -163,21 +163,41 @@ int		main(void)
 	char	src_6[7] = "salut";
 	char	dst_6 = 'u';
 
-	c = 22;
-	i = 1;
-	void	*restrict x;
-	void	*restrict y;
+	c = 109;
+	i = 0;
+	/*char	*x = memccpy(x, y, c, (unsigned int)i);
+	char	*y = ft_memccpy(x, y, c, (unsigned int)i);
 
-	x = &dst;
-	y = &src;
+
+	
+	printf("memccpy    = %s\n", dst);
+
+	
+	printf("ft_memccpy = %s\n\n", dst_2);
+
+
+
 	memccpy(x, y, c, (unsigned int)i);
 	printf("memccpy    = %s\n", dst);
 
-	x = &dst_2;
-	y = &src_2;
 	ft_memccpy(x, y, c, (unsigned int)i);
-	printf("ft_memccpy = %s\n\n", dst_2);
+	printf("ft_memccpy = %s\n\n", dst_2);*/
 
+	char srcaz[] = "test basic du memccpy !";
+	char buff1[22];
+	printf("%p\n", buff1);
+char *r1;
+char *r2;
+	printf("mem %p\nft_memccpy = %p\n\n", r1, r2);
+	r1 = memccpy(buff1, srcaz, 'm', 22);
+	printf("mem %p\nft_memccpy = %p\n\n", r1, r2);
+	r2 = ft_memccpy(buff1, srcaz, 'm', 22);
+	printf("mem %p\nft_memccpy = %p\n\n", r1, r2);
+	r1 = memccpy("", srcaz, 'm', 0);
+	r2 = ft_memccpy("", srcaz, 'm', 0);
+	printf("mem %p\nft_memccpy = %p\n\n", r1, r2);
+
+/*
 	x = &dst_3;
 	y = &src_3;
 	memcpy(x, y, (unsigned int)i);
@@ -206,7 +226,7 @@ int		main(void)
 
 
 
-
+*/
 
 
 
