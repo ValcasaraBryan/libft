@@ -23,10 +23,6 @@
 
 # define 		TRUE				1
 # define		FALSE				0
-# define		BASE_OCTAL			8
-# define		BASE_HEXADECIMAL	10
-# define		BASE_DECIMAL		16
-# define		ERROR				0
 
 int				ft_putchar_(int c);
 void			ft_putchar(char c);
@@ -83,6 +79,5 @@ void			ft_putchar_fd(char c, int fd);
 void			ft_putstr_fd(char const *s, int fd);
 void			ft_putendl_fd(char const *s, int fd);
 void			ft_putnbr_fd(int n, int fd);
-int				*ft_base(int n);
 
 #endif
