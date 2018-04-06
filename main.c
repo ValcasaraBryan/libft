@@ -31,7 +31,7 @@ int		main(void)
 	int		i;
 	int		j;
 
-
+/*
 	i = 0;
 	c = 65;
 	len = 4;
@@ -61,17 +61,18 @@ int		main(void)
 
 	i = 0;
 	printf("string    = %s\n", string);
-	bzero(string, 1/* n */);
+	bzero(string, 1);
 	while (i < 5)
 		printf("%c", string[i++]);
 
 	i = 0;
 	printf("\nstring_2  = %s\n", string_2);
-	ft_bzero(string_2, 1/* n */);
+	ft_bzero(string_2, 1);
 	while (i < 5)
 		printf("%c", string_2[i++]);
 	i = 0;
 	c = 0;
+*/
 /*
 	while (c != INT_MAX && c != INT_MIN)
 	{
@@ -127,6 +128,7 @@ int		main(void)
 			break;
 	}
 */
+/*
 	printf("%s\n", strrchr(str_5, 97));
 	printf("%s\n\n", ft_strrchr(str_6, 97));
 
@@ -147,15 +149,15 @@ int		main(void)
 	j = 65;
 	printf("i = %d   j = %d\ntolower    = %d\n", i, j, tolower(i));
 	printf("ft_tolower = %d\n\n", ft_tolower(j));
-
+*/
 	char	src[] = "test basic du memccpy !"; // 24
 	char	dst[22];
 	char	src_2[] = "test basic du memccpy !"; // 24
 	char	dst_2[22];	
-	char	src_3[7] = "salut";
-	char	dst_3[7] = "coucou";
-	char	src_4[7] = "salut";
-	char	dst_4[7] = "coucou";
+	char	*src_3 = "\xff\xaa\xde\200";
+	char	*dst_3 = "\xff\xaa\xde\0";
+	char	*src_4 = "\xff\xaa\xde\200";
+	char	*dst_4 = "\xff\xaa\xde\0";
 
 	char	src_5[7] = "salut";
 	char	dst_5[7] = "coucou";
@@ -165,29 +167,16 @@ int		main(void)
 
 	c = 109;
 	i = 0;
-	/*char	*x = memccpy(x, y, c, (unsigned int)i);
-	char	*y = ft_memccpy(x, y, c, (unsigned int)i);
+	char	*x; 
+	char	*y;
 
-
-	
-	printf("memccpy    = %s\n", dst);
-
-	
-	printf("ft_memccpy = %s\n\n", dst_2);
-
-
-
-	memccpy(x, y, c, (unsigned int)i);
-	printf("memccpy    = %s\n", dst);
-
-	ft_memccpy(x, y, c, (unsigned int)i);
-	printf("ft_memccpy = %s\n\n", dst_2);*/
 
 	char srcaz[] = "test basic du memccpy !";
 	char buff1[22];
-	printf("%p\n", buff1);
-char *r1;
-char *r2;
+//	printf("%p\n", buff1);
+	char *r1;
+	char *r2;
+/*
 	printf("mem %p\nft_memccpy = %p\n\n", r1, r2);
 	r1 = memccpy(buff1, srcaz, 'm', 22);
 	printf("mem %p\nft_memccpy = %p\n\n", r1, r2);
@@ -196,7 +185,40 @@ char *r2;
 	r1 = memccpy("", srcaz, 'm', 0);
 	r2 = ft_memccpy("", srcaz, 'm', 0);
 	printf("mem %p\nft_memccpy = %p\n\n", r1, r2);
+*/
+//	int cal = 0xF0 - 0xF;
+//	printf("%d\n", cal);
 
+	char dst1[0xF0];
+	char dst2[0xF0];
+	char dst3[0xF0];
+	char dst4[0xF0];
+	char *data = "thiß ß\xde\xad\xbe\xeftriñg will be øvérlapéd !\r\n";
+	char *data2 = "thiß ß\xde\xad\xbe\xeftriñg will be øvérlapéd !\r\n";
+	int size = 0xF0 - 0xF;
+
+    memset(dst1, 'A', sizeof(dst1));
+    memset(dst2, 'A', sizeof(dst2));
+    memcpy(dst1, data, strlen(data));
+    memcpy(dst2, data, strlen(data));
+
+    memset(dst3, 'A', sizeof(dst3));
+    memset(dst4, 'A', sizeof(dst4));
+    memcpy(dst3, data2, strlen(data2));
+    memcpy(dst4, data2, strlen(data2));
+
+//	printf("dst 2 adresse = %p\ndst 2 adresse = %p\n\n", dst2 + 3, dst2);
+
+	ft_memmove(dst2 + 3, dst2, size);
+	//printf("dst 2 = %s\n\n", dst2);
+
+	memmove(dst4 + 3, dst4, size);
+	//printf("dst 2 = %s\n\n", dst4);
+
+
+
+
+	i = 8;
 /*
 	x = &dst_3;
 	y = &src_3;
@@ -207,12 +229,12 @@ char *r2;
 	y = &src_4;
 	ft_memcpy(x, y, (unsigned int)i);
 	printf("ft_memcpy  = %s\n\n", dst_4);
-
+*/
 //	printf("src_4 = %s\ndst_3 = %s\n", src_4, dst_3);
 
-	printf("memcmp     = %d\n", memcmp(src_4, dst_3, (unsigned int) i));
-	printf("ft_memcmp  = %d\n\n", ft_memcmp(src_4, dst_3, (unsigned int) i));
-
+	printf("memcmp     = %d\n", memcmp(src_3, dst_3, (unsigned int) i));
+	printf("ft_memcmp  = %d\n\n", ft_memcmp(src_4, dst_4, (unsigned int) i));
+/*
 	x = &dst_5;
 	y = &src_5;
 	printf("memmove    = %s\n", memmove(y, x, 3));
@@ -222,11 +244,11 @@ char *r2;
 	printf("memchr     = %s\n", memchr(y, dst_6, 5));
 	printf("ft_memchr  = %s\n\n", ft_memchr(y, dst_6, 5));
 
-
-
-
-
 */
+
+
+
+
 
 
 
