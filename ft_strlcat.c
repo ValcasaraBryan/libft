@@ -12,30 +12,31 @@
 
 #include "libft.h"
 
-unsigned int	ft_strlcat(char *dest, const char *src, size_t dstsize)
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	unsigned int	i;
-	unsigned int	j;
-	unsigned int	src_init;
-	unsigned int	dest_init;
+	size_t	i;
+	size_t	j;
+	size_t	src_init;
+	size_t	dst_init;
+	unsigned char *src_unsigned;
 
 	i = 0;
 	j = 0;
-	src_init = ft_strlen_((char *)src);
-	dest_init = ft_strlen_((char *)dest);
-	while (dest[j] != '\0')
+	src_init = (size_t)ft_strlen_((char *)src);
+	dst_init = (size_t)ft_strlen_(dst);
+	src_unsigned = (unsigned char *)src;
+	while (dst[j] != '\0')
 		j++;
-	while ((i != dest_init && dest_init >= dstsize)
-			|| (i < (dstsize - 1) && dest_init < dstsize))
+	while (j < (dst_init + src_init) && i < size && j < size - 1)
 	{
-		dest[j] = src[i];
+		dst[j] = src_unsigned[i];
 		i++;
 		j++;
 	}
-	dest[i] = '\0';
-	if (dstsize > dest_init)
-		return (src_init + dest_init);
-	if (dstsize >= 1)
-		return (src_init + dstsize);
+	dst[j] = '\0';
+	if (size > dst_init)
+		return (src_init + dst_init);
+	if (size >= 1)
+		return (src_init + size);
 	return (src_init);
 }

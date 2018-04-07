@@ -15,15 +15,13 @@
 char	*ft_strcpy(char *dest, const char *src)
 {
 	int i;
-	int j;
 
-	i = ft_strlen((char *)src);
-	j = 0;
-	while (j <= (i + 1))
+	i = 0;
+	while (src[i] != '\0')
 	{
-		dest[j] = src[j];
-		j++;
+		dest[i] = src[i];
+		i++;
 	}
-	dest[j] = '\0';
+	dest[i] = '\0';
 	return (dest);
 }

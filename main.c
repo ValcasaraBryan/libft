@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int		main(void)
+int		main(int argc, char **argv)
 {
 	int		c;
 	int		d;
@@ -232,8 +232,8 @@ int		main(void)
 */
 //	printf("src_4 = %s\ndst_3 = %s\n", src_4, dst_3);
 
-	printf("memcmp     = %d\n", memcmp(src_3, dst_3, (unsigned int) i));
-	printf("ft_memcmp  = %d\n\n", ft_memcmp(src_4, dst_4, (unsigned int) i));
+//	printf("memcmp     = %d\n", memcmp(src_3, dst_3, (unsigned int) i));
+//	printf("ft_memcmp  = %d\n\n", ft_memcmp(src_4, dst_4, (unsigned int) i));
 /*
 	x = &dst_5;
 	y = &src_5;
@@ -245,11 +245,35 @@ int		main(void)
 	printf("ft_memchr  = %s\n\n", ft_memchr(y, dst_6, 5));
 
 */
-
-
-
-
-
+/*
+	char *str_25;
+	char *str_24;
+	char *tmp = "I malloc so I am.";
+	char *tmp_24 = "I malloc so I am.";
+	str_25 = strdup(tmp);
+	str_24 = ft_strdup(tmp_24);
+	printf("strdup    = %s\n", str_25);	
+	printf("ft_strdup = %s\n", str_24);
+*/
+	char test_3[] = "the cake is a lie !\0I'm hidden lol\r\n"; // src 18 + 1
+	char resu_5 [100] = "there is no stars in the sky"; // dest 23 + 1
+	char resu_6 [100] = "there is no stars in the sky"; // dest 23 + 1
+	int unsigned aout = 45; // max 42
+	ft_putnbr(ft_strlen(test_3));
+	ft_putchar('\n');
+	ft_putnbr(ft_strlen(resu_5));
+	ft_putchar('\n');
+	ft_putnbr(ft_strlen(resu_6));
+	ft_putchar('\n');
+	printf ("strlcat    = %lu\n", strlcat(resu_5, test_3, aout));
+	printf ("ft_strlcat = %zu\n\n", ft_strlcat(resu_6, test_3, aout));
+	printf ("src strlcat     = %s\ndest strlcat    = %s-\n", test_3, resu_5);
+	printf ("src ft_strlcat  = %s\ndest ft_strlcat = %s-\n\n", test_3, resu_6);
+	ft_putnbr(ft_strlen(test_3));
+	ft_putchar('\n');
+	ft_putnbr(ft_strlen(resu_5));
+	ft_putchar('\n');
+	ft_putnbr(ft_strlen(resu_6));
 
 
 	return (0);

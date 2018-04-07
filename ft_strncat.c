@@ -14,18 +14,16 @@
 
 char	*ft_strncat(char *s1, const char *s2, size_t n)
 {
-	unsigned int	i;
-	unsigned int	j;
-	char			*dest;
-	char			*src;
+	size_t	i;
+	size_t	j;
+	char	*dest;
+	char	*src;
 
 	i = 0;
-	j = 0;
+	j = ft_strlen(s1);
 	dest = s1;
 	src = (char *)s2;
-	while (dest[j] != '\0')
-		j++;
-	while (i < n)
+	while (i < n && src[i] != '\0')
 	{
 		dest[j] = src[i];
 		i++;
