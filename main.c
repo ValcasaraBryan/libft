@@ -22,8 +22,8 @@ int		main(int argc, char **argv)
 	char	str_2[6] = "salut";
 	char	string[6] = "salut";
 	char	string_2[6] = "salut";
-	const char str_3[6] = "salut";
-	const char str_4[6] = "salut";
+	const char *str_3 = "there is so \0ma\0ny \0 \\0 in t\0his stri\0ng !\0\0\0\0";
+	const char *str_4 = "there is so \0ma\0ny \0 \\0 in t\0his stri\0ng !\0\0\0\0";
 	const char str_5[9] = "salautp";
 	const char str_6[9] = "salautp";
 	void	*s;
@@ -106,14 +106,14 @@ int		main(int argc, char **argv)
 			break;
 	}
 */
-	j = 1;
+	j = 0;
 	i = j;
 /*
 	while (j != INT_MAX)
 	{
 		printf("\n--------------------------------\n");
-		printf("%s\n", strchr(str_3, j));
-		printf("%s\n", ft_strchr(str_4, i));
+		printf("%s\n", strchr(str_3, i));
+		printf("%s\n", ft_strchr(str_4, j));
 		printf("si tu veux arreter le test tape -1\ni = %d\ni = %c\n", j, (char)j);
 		printf("--------------------------------\n");
 				scanf("%d", &c);
@@ -131,15 +131,16 @@ int		main(int argc, char **argv)
 /*
 	printf("%s\n", strrchr(str_5, 97));
 	printf("%s\n\n", ft_strrchr(str_6, 97));
+*/
+	const char *botte_de_foin = "FF your FF return FF now FF"; // see FF your FF return FF now FF // MZIRIBMZIRIBMZE123
+	const char *aiguille = "FF"; // FF // MZIRIBMZE
 
-	i = 3;
-	const char botte_de_foin[10] = "ffeffe";
-	const char aiguille[10] = "fe";
-
+	i = ft_strlen((char *)botte_de_foin);
 	printf ("botte de foin      = %s\naiguille           = %s\ni = %d\n", botte_de_foin, aiguille, i);
-	printf ("ft_strnstr renvoi  = %s\n", ft_strnstr(botte_de_foin, aiguille, (unsigned int)i));
-	printf ("strnstr    renvoi  = %s\n\n", strnstr(botte_de_foin, aiguille, (unsigned int)i));
-
+	printf ("strnstr    renvoi  = %s\n", strnstr(botte_de_foin, aiguille, (unsigned int)i));
+	printf ("ft_strnstr renvoi  = %s\n\n", ft_strnstr(botte_de_foin, aiguille, (unsigned int)i));
+	
+/*
 	i = 97;
 	j = 97;
 	printf("i = %d   j = %d\ntoupper    = %d\n", i, j, toupper(i));
@@ -149,7 +150,7 @@ int		main(int argc, char **argv)
 	j = 65;
 	printf("i = %d   j = %d\ntolower    = %d\n", i, j, tolower(i));
 	printf("ft_tolower = %d\n\n", ft_tolower(j));
-*/
+
 	char	src[] = "test basic du memccpy !"; // 24
 	char	dst[22];
 	char	src_2[] = "test basic du memccpy !"; // 24
@@ -176,6 +177,7 @@ int		main(int argc, char **argv)
 //	printf("%p\n", buff1);
 	char *r1;
 	char *r2;
+*/
 /*
 	printf("mem %p\nft_memccpy = %p\n\n", r1, r2);
 	r1 = memccpy(buff1, srcaz, 'm', 22);
@@ -255,6 +257,7 @@ int		main(int argc, char **argv)
 	printf("strdup    = %s\n", str_25);	
 	printf("ft_strdup = %s\n", str_24);
 */
+/*
 	char test_3[] = "the cake is a lie !\0I'm hidden lol\r\n"; // src 18 + 1
 	char resu_5 [100] = "there is no stars in the sky"; // dest 23 + 1
 	char resu_6 [100] = "there is no stars in the sky"; // dest 23 + 1
@@ -274,6 +277,7 @@ int		main(int argc, char **argv)
 	ft_putnbr(ft_strlen(resu_5));
 	ft_putchar('\n');
 	ft_putnbr(ft_strlen(resu_6));
+*/
 
 
 	return (0);

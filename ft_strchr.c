@@ -21,11 +21,11 @@ char	*ft_strchr(const char *s, int c)
 	i = 0;
 	str = (char *)s;
 	d = (char)c;
-	while (str[i] != d || str[i] == '\0')
+	while (i <= ft_strlen((char *)s))
 	{
-		if (str[i] == '\0' && d != '\0')
-			return (NULL);
+		if (str[i] == d)
+			return (&str[i]);
 		i++;
 	}
-	return (&str[i]);
+	return (NULL);
 }
