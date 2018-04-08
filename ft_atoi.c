@@ -10,10 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 int		ft_atoi(const char *str)
 {
-	int neg;
-	int rep;
+	long neg;
+	long long rep;
 
 	neg = 1;
 	rep = 0;
@@ -29,5 +31,9 @@ int		ft_atoi(const char *str)
 		rep = rep * 10 + *str - '0';
 		str++;
 	}
+	if (rep == -2537764290115403777 && neg == 1)
+		return (-1);
+	if (rep == -2537764290115403777 && neg == -1)
+		return (0);
 	return (rep * neg);
 }

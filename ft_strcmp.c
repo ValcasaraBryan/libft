@@ -10,17 +10,21 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 int		ft_strcmp(const char *s1, const char *s2)
 {
 	int		i;
 	int		j;
-	char	*dest;
-	char	*src;
+	unsigned char	*dest;
+	unsigned char	*src;
 
 	i = 0;
 	j = 0;
-	dest = (char *)s1;
-	src = (char *)s2;
+	dest = (unsigned char *)s1;
+	src = (unsigned char *)s2;
+	if (ft_strlen((char *) s1) == 0 && ft_strlen((char *) s2) > 0)
+		return (-1);
 	while (dest[i])
 	{
 		if (dest[i] != src[i])

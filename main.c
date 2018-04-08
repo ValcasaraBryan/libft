@@ -105,9 +105,10 @@ int		main(int argc, char **argv)
 		if (c <= -1)
 			break;
 	}
-*/
+
 	j = 0;
 	i = j;
+*/
 /*
 	while (j != INT_MAX)
 	{
@@ -131,15 +132,15 @@ int		main(int argc, char **argv)
 /*
 	printf("%s\n", strrchr(str_5, 97));
 	printf("%s\n\n", ft_strrchr(str_6, 97));
-*/
-	const char *botte_de_foin = "FF your FF return FF now FF"; // see FF your FF return FF now FF // MZIRIBMZIRIBMZE123
-	const char *aiguille = "FF"; // FF // MZIRIBMZE
+*//*
+	const char *botte_de_foin = "MZIRIBMZIRIBMZE123"; // see FF your FF return FF now FF // MZIRIBMZIRIBMZE123
+	const char *aiguille = "MZIRIBMZE"; // FF // MZIRIBMZE
 
-	i = ft_strlen((char *)botte_de_foin);
+	i = ft_strlen((char *)aiguille);
 	printf ("botte de foin      = %s\naiguille           = %s\ni = %d\n", botte_de_foin, aiguille, i);
 	printf ("strnstr    renvoi  = %s\n", strnstr(botte_de_foin, aiguille, (unsigned int)i));
 	printf ("ft_strnstr renvoi  = %s\n\n", ft_strnstr(botte_de_foin, aiguille, (unsigned int)i));
-	
+*/
 /*
 	i = 97;
 	j = 97;
@@ -190,7 +191,7 @@ int		main(int argc, char **argv)
 */
 //	int cal = 0xF0 - 0xF;
 //	printf("%d\n", cal);
-
+/*
 	char dst1[0xF0];
 	char dst2[0xF0];
 	char dst3[0xF0];
@@ -221,6 +222,7 @@ int		main(int argc, char **argv)
 
 
 	i = 8;
+*/
 /*
 	x = &dst_3;
 	y = &src_3;
@@ -278,6 +280,15 @@ int		main(int argc, char **argv)
 	ft_putchar('\n');
 	ft_putnbr(ft_strlen(resu_6));
 */
+
+	ft_putnbr(atoi("99999999999999999999999999"));
+	ft_putchar('\n');
+	ft_putnbr(ft_atoi("99999999999999999999999999"));
+	ft_putchar('\n');
+	ft_putnbr(atoi("-99999999999999999999999999"));
+	ft_putchar('\n');
+	ft_putnbr(ft_atoi("-99999999999999999999999999"));
+	ft_putchar('\n');
 
 
 	return (0);
