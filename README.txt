@@ -12,186 +12,13 @@ ft_strncpy:    [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK]
 ft_strcat:     [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] 
 ft_strncat:    [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] 
 ft_strlcat:    [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] 
-ft_strchr:     [OK] [OK] [OK] [OK] [OK] [OK] [CRASH] [OK] [OK] [OK] 
-[crash]: your strchr does not work with \0
-Test code:
-	char *src = "there is so \0ma\0ny \0 \\0 in t\0his stri\0ng !\0\0\0\0";
-	char *d1 = strchr(src, '\0');
-	char *d2 = ft_strchr(src, '\0');
-
-	if (d1 == d2)
-		exit(TEST_SUCCESS);
-	exit(TEST_FAILED);
-
-
-ft_strrchr:    [OK] [OK] [FAILED] [FAILED] [FAILED] [OK] [OK] 
-[fail]: your strrchr does not work with unicode
-Test code:
-	char *src = "īœ˙ˀ˘¯ˇ¸¯.œ«‘––™ª•¡¶¢˜ˀ";
-	char *d1 = strrchr(src, L'–');
-	char *d2 = ft_strrchr(src, L'–');
-
-	if (d1 == d2)
-		exit(TEST_SUCCESS);
-	exit(TEST_FAILED);
-
-Diffs:
-     strrchr: |(null)|
-  ft_strrchr: |īœ˙ˀ˘¯ˇ¸¯.œ«‘––™ª•¡¶¢˜ˀ|
-
-[fail]: your strrchr does not work with \0
-Test code:
-	char *src = "there is so \0ma\0ny \0 \\0 in t\0his stri\0ng !\0\0\0\0";
-	char *d1 = strrchr(src, '\0');
-	char *d2 = ft_strrchr(src, '\0');
-
-	if (d1 == d2)
-		exit(TEST_SUCCESS);
-	exit(TEST_FAILED);
-
-Diffs:
-     strrchr: ||
-  ft_strrchr: |there is so |
-
-[fail]: your strrchr does not work with empty string
-Test code:
-	char *src = "\0";
-	char *d1 = strrchr(src, 'a');
-	char *d2 = ft_strrchr(src, 'a');
-
-	if (d1 == d2)
-		exit(TEST_SUCCESS);
-	exit(TEST_FAILED);
-
-Diffs:
-     strrchr: |(null)|
-  ft_strrchr: ||
-
+ft_strchr:     [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] 
+ft_strrchr:    [OK] [OK] [OK] [OK] [OK] [OK] [OK] 
 ft_strstr:     [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] 
-ft_strnstr:    [OK] [OK] [FAILED] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] 
-[fail]: your strnstr does not work with basic input
-Test code:
-	char *s1 = "MZIRIBMZIRIBMZE123";
-	char *s2 = "MZIRIBMZE";
-	size_t max = strlen(s2);
-	char *i1 = strnstr(s1, s2, max);
-	char *i2 = ft_strnstr(s1, s2, max);
-
-	if (i1 == i2)
-		exit(TEST_SUCCESS);
-	exit(TEST_FAILED);
-
-Diffs:
-     strnstr: |(null)|
-  ft_strnstr: |MZIRIBMZE123|
-
-ft_strcmp:     [OK] [OK] [OK] [OK] [OK] [OK] [FAILED] [FAILED] [FAILED] [OK] [OK] [OK] 
-[fail]: your strcmp does not work with zero length string
-Test code:
-	char *s1 = "";
-	char *s2 = "AAAAAA";
-	int i1 = ((strcmp(s1, s2) > 0) ? 1 : ((strcmp(s1, s2) < 0) ? -1 : 0));
-	int i2 = ((ft_strcmp(s1, s2) > 0) ? 1 : ((ft_strcmp(s1, s2) < 0) ? -1 : 0));
-
-	if (i1 == i2)
-		exit(TEST_SUCCESS);
-	exit(TEST_FAILED);
-
-Diffs:
-      strcmp: |-1|
-   ft_strcmp: |0|
-
-[fail]: your strcmp does not cast in unsigned the diff
-Test code:
-	char *s1 = "\0";
-	char *s2 = "\200";
-	int i1 = ((strcmp(s1, s2) > 0) ? 1 : ((strcmp(s1, s2) < 0) ? -1 : 0));
-	int i2 = ((ft_strcmp(s1, s2) > 0) ? 1 : ((ft_strcmp(s1, s2) < 0) ? -1 : 0));
-
-	if (i1 == i2)
-		exit(TEST_SUCCESS);
-	exit(TEST_FAILED);
-
-Diffs:
-      strcmp: |-1|
-   ft_strcmp: |0|
-
-[fail]: your strcmp does not work with non ascii chars
-Test code:
-	char *s1 = "\x12\xff\x65\x12\xbd\xde\xad";
-	char *s2 = "\x12\x02";
-	int i1 = ((strcmp(s1, s2) > 0) ? 1 : ((strcmp(s1, s2) < 0) ? -1 : 0));
-	int i2 = ((ft_strcmp(s1, s2) > 0) ? 1 : ((ft_strcmp(s1, s2) < 0) ? -1 : 0));
-
-	if (i1 == i2)
-		exit(TEST_SUCCESS);
-	exit(TEST_FAILED);
-
-Diffs:
-      strcmp: |1|
-   ft_strcmp: |-1|
-
-ft_strncmp:    [OK] [OK] [OK] [OK] [OK] [OK] [FAILED] [OK] [OK] [FAILED] [OK] [OK] [OK] 
-[fail]: your strncmp does not cast in unsigned char the diff
-Test code:
-	char *s1 = "\200";
-	char *s2 = "\0";
-	int i1 = ((strncmp(s1, s2, 1) > 0) ? 1 : ((strncmp(s1, s2, 1) < 0) ? -1 : 0));
-	int i2 = ((ft_strncmp(s1, s2, 1) > 0) ? 1 : ((ft_strncmp(s1, s2, 1) < 0) ? -1 : 0));
-
-	if (i1 == i2)
-		exit(TEST_SUCCESS);
-	exit(TEST_FAILED);
-
-Diffs:
-     strncmp: |1|
-  ft_strncmp: |-1|
-
-[fail]: your strncmp does not work with non ascii chars
-Test code:
-	char *s1 = "\x12\xff\x65\x12\xbd\xde\xad";
-	char *s2 = "\x12\x02";
-	size_t size = 6;
-	int i1 = ((strncmp(s1, s2, size) > 0) ? 1 : ((strncmp(s1, s2, size) < 0) ? -1 : 0));
-	int i2 = ((ft_strncmp(s1, s2, size) > 0) ? 1 : ((ft_strncmp(s1, s2, size) < 0) ? -1 : 0));
-
-	if (i1 == i2)
-		exit(TEST_SUCCESS);
-	exit(TEST_FAILED);
-
-Diffs:
-     strncmp: |1|
-  ft_strncmp: |-1|
-
-ft_atoi:       [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [KO] [KO] [OK] 
-[KO]: your atoi does not work with over long max value
-Test code:
-	char n[40] = "99999999999999999999999999";
-	int i1 = atoi(n);
-	int i2 = ft_atoi(n);
-
-	if (i1 == i2)
-		exit(TEST_SUCCESS);
-	exit(TEST_KO);
-
-Diffs:
-        atoi: |-1|
-     ft_atoi: |-469762049|
-
-[KO]: your atoi does not work with over long min value
-Test code:
-	char n[40] = "-99999999999999999999999999";
-	int i1 = atoi(n);
-	int i2 = ft_atoi(n);
-
-	if (i1 == i2)
-		exit(TEST_SUCCESS);
-	exit(TEST_KO);
-
-Diffs:
-        atoi: |0|
-     ft_atoi: |469762049|
-
+ft_strnstr:    [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] 
+ft_strcmp:     [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] 
+ft_strncmp:    [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] 
+ft_atoi:       [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] 
 ft_isalpha:    [OK] 
 ft_isdigit:    [OK] 
 ft_isalnum:    [OK] 
@@ -229,7 +56,7 @@ Test code:
 
 Diffs:
     memalloc: |0x0|
- ft_memalloc: |0x7fe174500050|
+ ft_memalloc: |0x7f9391c02420|
 
 ft_memdel:     [OK] [OK] {not protected}
 ft_strnew:     [OK] [FAILED] [OK] [OK] 
