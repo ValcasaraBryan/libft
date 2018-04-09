@@ -12,17 +12,30 @@
 
 #include "libft.h"
 
-int		ft_compt_mot(char const *s, char c)
+size_t	ft_compt_mot(char const *s, char c)
 {
-	int		i;
-	int		j;
+	size_t	j;
+	size_t	lenght;
+	size_t	mot;
 
-	i = -1;
 	j = 0;
-	while (s[i++] != '\0')
+	lenght = 0;
+	mot = 0;
+	if (!s)
+		return (0);
+	while (s[lenght] != '\0')
 	{
-		if (s[i] == c && s[i + 1] != c)
+		if (s[lenght] == c)
+		{
 			j++;
+			if (s[j] != c)
+				mot++;
+		}
+		lenght++;
 	}
-	return (j);
+	if (mot == 0)
+		return (0);
+	if (j < mot)
+		return (mot - j);
+	return (mot + 1);
 }

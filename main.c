@@ -11,6 +11,15 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+	
+
+void	fonction(unsigned int k, char *str)
+{
+	char i = 65; 
+
+	str[k] = i;
+}
+
 
 int		main(int argc, char **argv)
 {
@@ -280,7 +289,7 @@ int		main(int argc, char **argv)
 	ft_putchar('\n');
 	ft_putnbr(ft_strlen(resu_6));
 */
-
+/*
 	ft_putnbr(atoi("99999999999999999999999999"));
 	ft_putchar('\n');
 	ft_putnbr(ft_atoi("99999999999999999999999999"));
@@ -289,7 +298,16 @@ int		main(int argc, char **argv)
 	ft_putchar('\n');
 	ft_putnbr(ft_atoi("-99999999999999999999999999"));
 	ft_putchar('\n');
+*/
 
 
+	//char b[6] = "salut";
+	//ft_striteri(b, &fonction);
+	char **str_26;
+
+	//str_26 = ft_strtrim("      salut        ");
+	//ft_putstr(str_26);
+	str_26 = ft_strsplit("salut****l", '*');
+	ft_putstr(str_26[0]);
 	return (0);
 }

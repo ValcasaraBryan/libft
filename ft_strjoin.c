@@ -16,8 +16,11 @@ char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*str;
 
-	if (!(str = (char *)malloc(sizeof(s1) * ft_strlen((char *)s1) + 1)))
+	if (!s1 || !s2)
 		return (NULL);
-	str = ft_strcat((char *)s1, s2);
+	if (!(str = ft_memalloc((size_t)ft_strlen((char *)s1)
+		+ (size_t)ft_strlen((char *)s2) + 1)))
+		return (NULL);
+	str = ft_strcat(ft_strcpy(str, s1), s2);
 	return (str);
 }

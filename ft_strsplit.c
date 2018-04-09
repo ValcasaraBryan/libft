@@ -14,28 +14,27 @@
 
 char	**ft_strsplit(char const *s, char c)
 {
+	size_t	index;
+	size_t	i;
+	size_t	j;
+	size_t	total;
 	char	**str;
-	char	*mot;
-	int		i;
-	int		j;
-	int		index;
 
 	i = 0;
 	j = 0;
 	index = 0;
-	if (!(str = (char **)malloc(sizeof(char*) * ft_compt_mot(s, c) + 1)))
+	if (!s)
 		return (NULL);
-	while (s[i] != '\0')
+	total = (size_t)ft_strlen((char *)s);
+	if (!(str = ft_memalloc(ft_compt_mot((char *)s, c) + 1)))
+		return (NULL);
+	while (i <= total)
 	{
-		while (s[i] == c)
-			i++;
-		if (s[j] && s[j] != c)
-		{
-			if (!(mot = (char *)malloc(sizeof(char) * i - j + 1)))
-				return (NULL);
-			str[index++] = ft_strcpy(mot, s + i);
-		}
 		while (s[i] != c)
+			i++;
+		if (s[j] && j < i)
+			str[index++] = ft_compt_char((char *)s + j, (i - j));
+		while (s[i] == c)
 			i++;
 		j = i;
 	}
