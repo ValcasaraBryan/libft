@@ -14,10 +14,10 @@
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	char			*source;
-	char			*destination;
-	char			string;
-	unsigned int	i;
+	char	*source;
+	char	*destination;
+	char	string;
+	size_t	i;
 
 	i = 0;
 	source = (char *)s;

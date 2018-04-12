@@ -303,11 +303,7 @@ int		main(int argc, char **argv)
 
 	//char b[6] = "salut";
 	//ft_striteri(b, &fonction);
-	char **str_26;
-
 	//str_26 = ft_strtrim("      salut        ");
 	//ft_putstr(str_26);
-	str_26 = ft_strsplit("salut****l", '*');
-	ft_putstr(str_26[0]);
 	return (0);
 }
