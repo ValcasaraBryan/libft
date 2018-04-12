@@ -26,17 +26,17 @@ char	**ft_strsplit(char const *s, char c)
 	if (!s)
 		return (NULL);
 	total = (size_t)ft_strlen((char *)s);
-	if (!(str = ft_memalloc(ft_compt_mot((char *)s, c) + 1)))
+	if (!(str = ft_memalloc(ft_compt_mot(s, c) + 1)))
 		return (NULL);
 	while (i <= total)
 	{
 		while (s[i] != c)
 			i++;
-		if (s[j] && j < i)
-			str[index++] = ft_compt_char((char *)s + j, (i - j));
+		j = i;
 		while (s[i] == c)
 			i++;
-		j = i;
+		if (s[j] != c && s[i] == c)
+			str[index++] = ft_compt_char(s + j, i - j);
 	}
 	str[index] = 0;
 	return (str);

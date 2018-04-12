@@ -15,15 +15,9 @@
 char	*ft_compt_char(char const *s, size_t len)
 {
 	char	*dest;
-	int		i;
-	int		j;
 
-	i = 0;
-	j = 0;
 	if (!s)
 		return (NULL);
 	dest = ft_memalloc(len + 1);
-	if (dest == NULL)
-		return (NULL);
 	return (ft_strncpy(dest, s, len));
 }

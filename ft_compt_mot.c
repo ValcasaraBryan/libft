@@ -15,27 +15,18 @@
 size_t	ft_compt_mot(char const *s, char c)
 {
 	size_t	j;
-	size_t	lenght;
-	size_t	mot;
+	size_t	index;
 
 	j = 0;
-	lenght = 0;
-	mot = 0;
+	index = 0;
 	if (!s)
 		return (0);
-	while (s[lenght] != '\0')
+	while (s[j] != '\0')
 	{
-		if (s[lenght] == c)
-		{
-			j++;
-			if (s[j] != c)
-				mot++;
-		}
-		lenght++;
+		if (s[j] != c)
+			if (s[j + 1] == c || s[j + 1] == '\0')
+				index++;
+		j++;
 	}
-	if (mot == 0)
-		return (0);
-	if (j < mot)
-		return (mot - j);
-	return (mot + 1);
+	return (j);
 }
