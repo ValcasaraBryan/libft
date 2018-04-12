@@ -21,9 +21,6 @@
 # include <ctype.h>
 # include <limits.h>
 
-# define 		TRUE				1
-# define		FALSE				0
-
 int				ft_putchar_(int c);
 void			ft_putchar(char c);
 void			ft_putstr(char const *str);
