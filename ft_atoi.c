@@ -14,8 +14,8 @@
 
 int		ft_atoi(const char *str)
 {
-	long neg;
-	long long rep;
+	long		neg;
+	long long	rep;
 
 	neg = 1;
 	rep = 0;

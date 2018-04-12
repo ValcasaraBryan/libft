@@ -21,7 +21,6 @@ char	**ft_strsplit(char const *s, char c)
 	char	**str;
 
 	i = 0;
-	j = 0;
 	index = 0;
 	if (!s)
 		return (NULL);

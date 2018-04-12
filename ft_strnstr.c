@@ -36,5 +36,5 @@ char	*ft_strnstr(const char *str, const char *to_find, size_t len)
 		if (s[index_str] != find[index_find])
 			index_str++;
 	}
-    return (NULL);
+	return (NULL);
 }
