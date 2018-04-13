@@ -12,6 +12,13 @@
 
 #include "libft.h"
 	
+//typedef struct  s_list t_list;
+
+//struct s_list
+//{
+//	char *str;
+//	t_list *next;
+//};
 
 void	fonction(unsigned int k, char *str)
 {
@@ -20,6 +27,28 @@ void	fonction(unsigned int k, char *str)
 	str[k] = i;
 }
 
+void	print_list(t_list *list)
+{
+	while (list)
+	{
+		ft_putstr(list->content);
+		list = list->next;
+		ft_putchar('\n');
+	}
+}
+
+//t_list *add_link(t_list *list, char *str)
+//{
+//	t_list *tmp;
+//
+//	tmp = malloc(sizeof(t_list));
+//	if (tmp)
+//	{
+//		tmp->str = str;
+//		tmp->next = list;
+//	}
+//	return (tmp);
+//}
 
 int		main(int argc, char **argv)
 {
@@ -40,6 +69,22 @@ int		main(int argc, char **argv)
 	int		i;
 	int		j;
 
+
+	t_list *list;
+//
+//	list = NULL;
+//	list = add_link(list, "titi\n");
+//	list = add_link(list, "toto\n");
+//	list = add_link(list, "tutu\n");
+//	list = add_link(list, "tata\n");
+
+	t_list *data;
+	list = ft_lstnew(data, 3);
+	print_list(list);
+	//ft_putchar('\n');
+	//ft_putnbr(ft_strcmp(data, list->content));
+	//free(list->content);
+	//free(list);
 /*
 	i = 0;
 	c = 65;
@@ -305,5 +350,10 @@ int		main(int argc, char **argv)
 	//ft_striteri(b, &fonction);
 	//str_26 = ft_strtrim("      salut        ");
 	//ft_putstr(str_26);
+//	char *str_27;
+//
+//	str_27 = ft_itoa(-0);
+//	ft_putstr(str_27);
+
 	return (0);
 }

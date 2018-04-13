@@ -14,9 +14,9 @@
 
 t_list	*ft_lstnew(void const *content, size_t content_size)
 {
-	t_list	*list;
+	t_list	*tmp;
 	size_t	size;
-	char	*str;
+	void	*str;
 
 	if (!content)
 	{
@@ -24,11 +24,15 @@ t_list	*ft_lstnew(void const *content, size_t content_size)
 		content = NULL;
 	}
 	size = content_size;
-	list = NULL;
-	str = ft_memalloc(content_size + 1);
-	str = (char *)content;
-	list->content = str;
-	return (list);
+	if (!(tmp = malloc(sizeof(t_list))))
+		return (NULL);
+	tmp->next = NULL;
+	if (!(str = ft_memalloc(size)))
+		return (NULL);
+	str = (void *)content;
+	tmp->content = str;
+	tmp->content_size = size;
+	return (tmp);
 }
 
 //Alloue (avec malloc(3)) et retourne un maillon “frais”.
@@ -39,3 +43,10 @@ t_list	*ft_lstnew(void const *content, size_t content_size)
 // à 0 quelque soit la valeur du paramètre content_size. Le champ
 // next est initialisé à NULL. Si l’allocation échoue, la fonction
 // renvoie NULL.
+
+//typedef struct		s_list
+//{
+//	void			*content;
+//	size_t			content_size;
+//	struct s_list	*next;
+//}					t_list;
