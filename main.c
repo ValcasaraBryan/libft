@@ -19,7 +19,7 @@
 //	char *str;
 //	t_list *next;
 //};
-
+/*
 void	fonction(unsigned int k, char *str)
 {
 	char i = 65; 
@@ -36,7 +36,7 @@ void	print_list(t_list *list)
 		ft_putchar('\n');
 	}
 }
-
+*/
 //t_list *add_link(t_list *list, char *str)
 //{
 //	t_list *tmp;
@@ -80,7 +80,7 @@ int		main(int argc, char **argv)
 
 	t_list *data;
 	list = ft_lstnew(data, 3);
-	print_list(list);
+	//print_list(list);
 	//ft_putchar('\n');
 	//ft_putnbr(ft_strcmp(data, list->content));
 	//free(list->content);
