@@ -80,7 +80,7 @@ int		main(int argc, char **argv)
 	int		j;
 
 
-	t_list *list;
+	//t_list *list;
 //
 //	list = NULL;
 //	list = add_link(list, "titi\n");
@@ -88,11 +88,22 @@ int		main(int argc, char **argv)
 //	list = add_link(list, "tutu\n");
 //	list = add_link(list, "tata\n");
 
+<<<<<<< HEAD
 	list = ft_lstnew("salut", 6);
 	print_list(list);
 	//ft_lstdelone(&list, uf_del_callback);
+=======
+<<<<<<< HEAD
+	//list = ft_lstnew("he", 2);
+	//print_list(list);
+	//ft_putnbr(ft_strcmp("he", list->content));
+=======
+	t_list *data;
+	list = ft_lstnew(data, 3);
+>>>>>>> 2febd248488b7b3945017c95503435f3b04ad335
 	//print_list(list);
 	//ft_putnbr(ft_strcmp(data, list->content));
+>>>>>>> 86d47a069b89373b532b8b2fd6d39eb7a034429d
 	//free(list->content);
 	//free(list);
 /*
@@ -364,6 +375,17 @@ int		main(int argc, char **argv)
 //
 //	str_27 = ft_itoa(-0);
 //	ft_putstr(str_27);
-
+//	lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse
+	char **tab;
+	tab = ft_strsplit(argv[argc - 1], ' ');
+	printf("test = [%s]\n", argv[argc - 1]);
+	printf("tab[0] = [%s]\n", tab[0]);
+	printf("tab[1] = [%s]\n", tab[1]);
+	printf("tab[2] = [%s]\n", tab[2]);
+//	printf("tab[3] = %s\n", tab[3]);
+//	printf("tab[4] = %s\n", tab[4]);
+//	printf("tab[5] = %s\n", tab[5]);
+//	printf("%s\n", tab[6]);
+//	printf("%s\n", tab[7]);
 	return (0);
 }

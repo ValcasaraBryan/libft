@@ -37,13 +37,13 @@ all : $(NAME)
 $(NAME) :
 	@gcc -c $(FLAG) $(HEAD) $(SRC)
 	@ar rc $(NAME) $(OBJET)
-	ranlib $(NAME)
-
+	@ranlib $(NAME)
+#	gcc $(NAME) main.c -o $(EXE)
 comp : $(NAME) main.c
-	gcc $(NAME) main.c -o $(EXE)
+	@gcc $(NAME) main.c -o $(EXE)
 
 exe : comp
-	@./$(EXE)
+	@./$(EXE) "  salut les coucou   "
 
 debug : main.c
 	cpp main.c
