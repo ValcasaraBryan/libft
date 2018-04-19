@@ -18,6 +18,17 @@ char	*ft_compt_char(char const *s, size_t len)
 
 	if (!s)
 		return (NULL);
+	printf("len = %zu\n",len);
 	dest = ft_memalloc(len + 1);
-	return (ft_strncpy(dest, s, len));
+	dest = ft_strncpy(dest, s, len);
+	printf("dest = [%c], adresse = [%p]\n", dest[0], &dest[0]);
+	printf("dest = [%c], adresse = [%p]\n", dest[1], &dest[1]);
+	printf("dest = [%c], adresse = [%p]\n", dest[2], &dest[2]);
+	printf("dest = [%c], adresse = [%p]\n", dest[3], &dest[3]);
+	printf("dest = [%c], adresse = [%p]\n", dest[4], &dest[4]);
+	printf("dest = [%c], adresse = [%p]\n", dest[5], &dest[5]);
+	printf("dest = [%c], adresse = [%p]\n\n", dest[6], &dest[6]);
+
+	printf("dest               = [%p]\n", dest);
+	return (dest);
 }

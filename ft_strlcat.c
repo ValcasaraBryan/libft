@@ -22,8 +22,8 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 
 	i = 0;
 	j = 0;
-	src_init = (size_t)ft_strlen_((char *)src);
-	dst_init = (size_t)ft_strlen_(dst);
+	src_init = ft_strlen((char *)src);
+	dst_init = ft_strlen(dst);
 	src_unsigned = (unsigned char *)src;
 	while (dst[j] != '\0')
 		j++;

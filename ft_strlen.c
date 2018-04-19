@@ -21,13 +21,3 @@ size_t	ft_strlen(const char *str)
 		i++;
 	return (i);
 }
-
-unsigned int	ft_strlen_(char *str)
-{
-	int			i;
-
-	i = 0;
-	while (str[i] != '\0')
-		i++;
-	return (i);
-}
