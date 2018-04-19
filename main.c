@@ -26,6 +26,10 @@ void	fonction(unsigned int k, char *str)
 
 	str[k] = i;
 }
+*/
+//#include "../../../42FileChecker/moulitest_42projects/libft_tests/project.h"
+
+static int ____diddel;
 
 void	print_list(t_list *list)
 {
@@ -36,7 +40,13 @@ void	print_list(t_list *list)
 		ft_putchar('\n');
 	}
 }
-*/
+
+void	uf_del_callback(void *d, size_t s)
+{
+	free(d);
+	(void)s;
+}
+
 //t_list *add_link(t_list *list, char *str)
 //{
 //	t_list *tmp;
@@ -78,10 +88,10 @@ int		main(int argc, char **argv)
 //	list = add_link(list, "tutu\n");
 //	list = add_link(list, "tata\n");
 
-	t_list *data;
-	list = ft_lstnew(data, 3);
+	list = ft_lstnew("salut", 6);
+	print_list(list);
+	//ft_lstdelone(&list, uf_del_callback);
 	//print_list(list);
-	//ft_putchar('\n');
 	//ft_putnbr(ft_strcmp(data, list->content));
 	//free(list->content);
 	//free(list);

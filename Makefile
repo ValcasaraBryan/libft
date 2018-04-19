@@ -13,7 +13,7 @@ SRC = ft_atoi.c ft_bzero.c ft_compt_char.c ft_compt_mot.c ft_isalnum.c\
 	ft_strlcat.c ft_strlen.c ft_strmap.c ft_strmapi.c ft_strncat.c\
 	ft_strncmp.c ft_strncpy.c ft_strnequ.c ft_strnew.c ft_strnstr.c\
 	ft_strrchr.c ft_strsplit.c ft_strstr.c ft_strsub.c ft_strtrim.c\
-	ft_tolower.c ft_toupper.c\
+	ft_tolower.c ft_toupper.c ft_lstdelone.c\
 
 OBJET = ft_atoi.o ft_bzero.o ft_compt_char.o ft_compt_mot.o ft_isalnum.o\
 	ft_isalpha.o ft_isascii.o ft_isdigit.o ft_isprint.o ft_itoa.o\
@@ -26,7 +26,7 @@ OBJET = ft_atoi.o ft_bzero.o ft_compt_char.o ft_compt_mot.o ft_isalnum.o\
 	ft_strlcat.o ft_strlen.o ft_strmap.o ft_strmapi.o ft_strncat.o\
 	ft_strncmp.o ft_strncpy.o ft_strnequ.o ft_strnew.o ft_strnstr.o\
 	ft_strrchr.o ft_strsplit.o ft_strstr.o ft_strsub.o ft_strtrim.o\
-	ft_tolower.o ft_toupper.o\
+	ft_tolower.o ft_toupper.o ft_lstdelone.o\
 
 HEAD = -I libft.h
 
