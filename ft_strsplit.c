@@ -23,7 +23,9 @@ char	**ft_strsplit(char const *s, char c)
 	index = 0;
 	if (!s)
 		return (NULL);
-	if (!(str = ft_memalloc(ft_compt_mot(s, c) + 1)))
+	//(char **)ft_memalloc(ft_compt_mot(s, c) + 1))
+	//(char **)malloc(sizeof (char *) * ft_compt_mot(s, c) + 1)
+	if (!(str = (char **)malloc(sizeof (char *) * ft_compt_mot(s, c) + 1)))
 		return (NULL);
 	printf("ft_compt_mot = [%zu]\n", ft_compt_mot(s, c) + 1);
 	while (i <= (size_t)ft_strlen((char *)s))

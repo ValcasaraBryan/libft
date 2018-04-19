@@ -88,22 +88,16 @@ int		main(int argc, char **argv)
 //	list = add_link(list, "tutu\n");
 //	list = add_link(list, "tata\n");
 
-<<<<<<< HEAD
-	list = ft_lstnew("salut", 6);
-	print_list(list);
+//	list = ft_lstnew("salut", 6);
+//	print_list(list);
 	//ft_lstdelone(&list, uf_del_callback);
-=======
-<<<<<<< HEAD
 	//list = ft_lstnew("he", 2);
 	//print_list(list);
 	//ft_putnbr(ft_strcmp("he", list->content));
-=======
-	t_list *data;
-	list = ft_lstnew(data, 3);
->>>>>>> 2febd248488b7b3945017c95503435f3b04ad335
+//	t_list *data;
+//	list = ft_lstnew(data, 3);
 	//print_list(list);
 	//ft_putnbr(ft_strcmp(data, list->content));
->>>>>>> 86d47a069b89373b532b8b2fd6d39eb7a034429d
 	//free(list->content);
 	//free(list);
 /*
