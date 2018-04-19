@@ -19,7 +19,7 @@
 //	char *str;
 //	t_list *next;
 //};
-
+/*
 void	fonction(unsigned int k, char *str)
 {
 	char i = 65; 
@@ -36,7 +36,7 @@ void	print_list(t_list *list)
 		ft_putchar('\n');
 	}
 }
-
+*/
 //t_list *add_link(t_list *list, char *str)
 //{
 //	t_list *tmp;
@@ -78,9 +78,17 @@ int		main(int argc, char **argv)
 //	list = add_link(list, "tutu\n");
 //	list = add_link(list, "tata\n");
 
+<<<<<<< HEAD
 	//list = ft_lstnew("he", 2);
 	//print_list(list);
 	//ft_putnbr(ft_strcmp("he", list->content));
+=======
+	t_list *data;
+	list = ft_lstnew(data, 3);
+	//print_list(list);
+	//ft_putchar('\n');
+	//ft_putnbr(ft_strcmp(data, list->content));
+>>>>>>> 86d47a069b89373b532b8b2fd6d39eb7a034429d
 	//free(list->content);
 	//free(list);
 /*
