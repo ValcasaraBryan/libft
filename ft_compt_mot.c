@@ -28,6 +28,5 @@ size_t	ft_compt_mot(char const *s, char c)
 				index++;
 		j++;
 	}
-	printf("compt mot index = [%zu]\n", index);
 	return (index);
 }
