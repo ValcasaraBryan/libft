@@ -2,7 +2,7 @@ NAME = libft.a
 
 EXE = executable
 
-SRC = ft_atoi.c ft_bzero.c ft_compt_char.c ft_compt_mot.c ft_isalnum.c\
+SRC = ft_atoi.c ft_bzero.c ft_isalnum.c\
 	ft_isalpha.c ft_isascii.c ft_isdigit.c ft_isprint.c ft_itoa.c\
 	ft_lstnew.c ft_memalloc.c ft_memccpy.c ft_memchr.c ft_memcmp.c\
 	ft_memcpy.c ft_memdel.c ft_memmove.c ft_memset.c ft_putchar.c\
@@ -15,7 +15,7 @@ SRC = ft_atoi.c ft_bzero.c ft_compt_char.c ft_compt_mot.c ft_isalnum.c\
 	ft_strrchr.c ft_strsplit.c ft_strstr.c ft_strsub.c ft_strtrim.c\
 	ft_tolower.c ft_toupper.c ft_lstdelone.c\
 
-OBJET = ft_atoi.o ft_bzero.o ft_compt_char.o ft_compt_mot.o ft_isalnum.o\
+OBJET = ft_atoi.o ft_bzero.o ft_isalnum.o\
 	ft_isalpha.o ft_isascii.o ft_isdigit.o ft_isprint.o ft_itoa.o\
 	ft_lstnew.o ft_memalloc.o ft_memccpy.o ft_memchr.o ft_memcmp.o\
 	ft_memcpy.o ft_memdel.o ft_memmove.o ft_memset.o ft_putchar.o\
@@ -43,7 +43,7 @@ comp : $(NAME) main.c
 	@gcc $(NAME) main.c -o $(EXE)
 
 exe : comp
-	@./$(EXE) "  salut les coucou   "
+	@./$(EXE) "salut"
 
 debug : main.c
 	cpp main.c
@@ -54,4 +54,4 @@ clean : $(OBJET)
 fclean : clean
 	rm $(NAME)
 
-re : fclean all
+re : clean all

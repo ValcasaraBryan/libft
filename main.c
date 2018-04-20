@@ -380,8 +380,9 @@ int		main(int argc, char **argv)
 //		printf("tab[%i] = [%s]\n", k, tab[k]);
 //		k++;
 //	}
-	const char *salut_ = "ipsum";
-	printf("result = [%s], aiguille = [%s]\n", ft_strnstr("lorem ipsum dolor sit amet", salut_, 15), salut_);
-	printf("result = [%s], aiguille = [%s]\n", strnstr("lorem ipsum dolor sit amet", salut_, 15), salut_);
+	const char *salut_ = "dol";
+	const char *salut_2 = "dol";
+	printf("result = [%s], aiguille = [%s]\n", ft_strnstr("lorem ipsum dolor sit amet", salut_, 30), salut_);
+	printf("result = [%s], aiguille = [%s]\n", strnstr("lorem ipsum dolor sit amet", salut_2, 30), salut_2);
 	return (0);
 }
