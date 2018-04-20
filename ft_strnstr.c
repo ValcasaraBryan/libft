@@ -16,8 +16,8 @@ char	*ft_strnstr(const char *str, const char *to_find, size_t len)
 {
 	size_t	index_str;
 	size_t	index_find;
-	char			*s;
-	char			*find;
+	char	*s;
+	char	*find;
 
 	index_str = 0;
 	index_find = 0;
