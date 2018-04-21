@@ -370,16 +370,19 @@ int		main(int argc, char **argv)
 //	str_27 = ft_itoa(-0);
 //	ft_putstr(str_27);
 //	lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse
-	char **tab;
-	tab = ft_strsplit(argv[argc - 1], ' ');
-	printf("test = [%s]\n", argv[argc - 1]);
-	printf("tab[0] = [%s]\n", tab[0]);
-	printf("tab[1] = [%s]\n", tab[1]);
-	printf("tab[2] = [%s]\n", tab[2]);
-//	printf("tab[3] = %s\n", tab[3]);
-//	printf("tab[4] = %s\n", tab[4]);
-//	printf("tab[5] = %s\n", tab[5]);
-//	printf("%s\n", tab[6]);
-//	printf("%s\n", tab[7]);
+//	unsigned int h = 1;
+//	int k = 0;
+//	char **tab;
+//	tab = ft_strsplit(argv[argc - 1], '\0');
+//	printf("test = [%s]\n", argv[argc - 1]);
+//	while (h--)
+//	{
+//		printf("tab[%i] = [%s]\n", k, tab[k]);
+//		k++;
+//	}
+	const char *salut_ = "dol";
+	const char *salut_2 = "dol";
+	printf("result = [%s], aiguille = [%s]\n", ft_strnstr("lorem ipsum dolor sit amet", salut_, 30), salut_);
+	printf("result = [%s], aiguille = [%s]\n", strnstr("lorem ipsum dolor sit amet", salut_2, 30), salut_2);
 	return (0);
 }
