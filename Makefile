@@ -52,6 +52,6 @@ clean : $(OBJET)
 	@rm $(OBJET)
 
 fclean : clean
-	rm $(NAME)
+	@rm $(NAME)
 
 re : fclean all

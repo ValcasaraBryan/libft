@@ -94,8 +94,8 @@ int		main(int argc, char **argv)
 	//list = ft_lstnew("he", 2);
 	//print_list(list);
 	//ft_putnbr(ft_strcmp("he", list->content));
-//	t_list *data;
-//	list = ft_lstnew(data, 3);
+//mak	t_list *data;
+//mak	list = ft_lstnew(data, 3);
 	//print_list(list);
 	//ft_putnbr(ft_strcmp(data, list->content));
 	//free(list->content);
