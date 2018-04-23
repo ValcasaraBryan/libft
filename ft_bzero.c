@@ -14,7 +14,7 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	unsigned long	i;
+	size_t			i;
 	unsigned char	*tab;
 
 	i = 0;
