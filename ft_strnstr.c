@@ -19,25 +19,23 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	char	*s;
 	char	*find;
 
-	i= 0;
+	i = 0;
 	j = 0;
 	s = (char *)needle;
 	find = (char *)haystack;
-	if (find[0] == '\0')
-		return (s);
-	while (j <= len)
-	{
-		while (s[j] == find[i + j])
+	if (s[0] == '\0')
+		return (find);
+	while (len--)
+		if (needle[j] != haystack[i + j])
 		{
-			printf("find[%zu]", j);
-			printf("[%c]\n", find[j]);
+			j = 0;
 			i++;
-			if (find[j] == '\0')
-				return (&find[i]);
 		}
-		printf("str[%zu]\n", i);
-		i = 0;
-		j++;
-	}
+		else if (needle[j] == haystack[i + j])
+		{
+			j++;
+			if (needle[j] == '\0')
+				return ((char *)&haystack[i]);
+		}
 	return (NULL);
 }
