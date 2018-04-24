@@ -18,15 +18,18 @@ t_list	*ft_lstnew(void const *content, size_t content_size)
 
 	if (!(tmp = malloc(sizeof(t_list))))
 		return (NULL);
-	tmp->next = NULL;
 	if (content)
 	{
-		tmp->content = ft_memalloc(content_size + 1);
+		if (!(tmp->content = ft_memalloc(content_size + 1)))
+			return (NULL);
 		ft_memcpy(tmp->content, content, content_size);
 		tmp->content_size = content_size;
-		return (tmp);
 	}
-	tmp->content = NULL;
-	tmp->content_size = 0;
+	else
+	{
+		tmp->content = NULL;
+		tmp->content_size = 0;
+	}
+	tmp->next = NULL;
 	return (tmp);
 }
