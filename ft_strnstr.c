@@ -16,11 +16,10 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
 	size_t	i;
 	size_t	j;
-	char	*s;
-	char	*find;
 
 	i = 0;
 	j = 0;
+
 	s = (char *)needle;
 	find = (char *)haystack;
 	if (s[0] == '\0')
