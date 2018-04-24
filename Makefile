@@ -54,4 +54,4 @@ clean : $(OBJET)
 fclean : clean
 	@rm $(NAME)
 
-re : fclean all
+re : clean all
