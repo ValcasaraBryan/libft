@@ -14,12 +14,12 @@
 	
 int		main(int argc, char **argv)
 {
-	ft_putchar('[');
-	ft_putstr(ft_strnstr("FF","see FF your FF return FF now FF", ft_strlen("see FF your FF return FF now FF")));
+	ft_putstr("strnstr    = [");
+	ft_putstr(strnstr("Bonjour je m'appelle clara et bryan","clara", ft_strlen("Bonjour je m'appelle clara et bryan")));
 	ft_putchar(']');
 	ft_putchar('\n');
-	ft_putchar('[');
-	ft_putstr(strnstr("FF","see FF your FF return FF now FF", ft_strlen("see FF your FF return FF now FF")));
+	ft_putstr("ft_strnstr = [");
+	ft_putstr(ft_strnstr("Bonjour je m'appelle clara et bryan","clara", ft_strlen("Bonjour je m'appelle clara et bryan")));
 	ft_putchar(']');
 	ft_putchar('\n');
 	return (0);
