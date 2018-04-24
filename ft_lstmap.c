@@ -14,5 +14,14 @@
 
 t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 {
+	t_list	*tmp;
 
+	while (lst)
+	{
+		if (!(tmp = ft_memalloc(sizeof(t_list))))
+			return (NULL);
+		tmp = f(lst);
+		lst = lst->next;
+	}
+	return (tmp);
 }

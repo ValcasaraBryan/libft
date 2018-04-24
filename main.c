@@ -61,6 +61,6 @@ int		main(void)
 	ft_lstadd(&add, list4);
 
 	printf("list4->content = [%p]\n", list4);
-	printf("list4->next    = [%p]\n", list4->next);
+	printf("list4->next    = [%p]\n", add);
 	return (0);
 }

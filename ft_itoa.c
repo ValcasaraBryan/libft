@@ -34,7 +34,8 @@ static char	*ft_min(void)
 {
 	char *min;
 
-	min = ft_memalloc(12);
+	if (!(min = ft_memalloc(12)))
+		return (NULL);
 	min[0] = '-';
 	min[1] = '2';
 	min[2] = '1';
