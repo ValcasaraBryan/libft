@@ -19,7 +19,7 @@ void	ft_print_words_tables(char **tab)
 	i = 0;
 	while (tab[i] != NULL)
 	{
-		ft_putstr_2(tab[i++]);
+		ft_putstr(tab[i++]);
 		ft_putchar('\n');
 	}
 }
