@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: brvalcas <marvin@42.fr>                    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2018/04/25 23:01:19 by brvalcas          #+#    #+#              #
+#    Updated: 2018/04/25 23:01:22 by brvalcas         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 NAME = libft.a
 
 EXE = executable
@@ -27,14 +39,14 @@ all : $(NAME)
 $(NAME) : $(OBJET)
 	@ar rc $@ $^
 	@ranlib $@
-#	gcc $(NAME) main.c -o $(EXE)
+
 %.o:%.c
 	@clang $(FLAG) -o $@ -c $<
 
 comp : $(NAME) main.c
-	@gcc $(NAME) main.c -o $(EXE)
+	@gcc $(NAME) $(FLAG) main.c -o $(EXE)
 exe : comp
-	@./$(EXE) "                  olol" " " | cat -e
+	@./$(EXE) 1
 debug : main.c
 	cpp main.c
 

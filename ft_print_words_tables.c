@@ -1,24 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*   ft_print_words_tables.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: brvalcas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/04/04 16:26:59 by brvalcas          #+#    #+#             */
-/*   Updated: 2018/04/04 16:27:00 by brvalcas         ###   ########.fr       */
+/*   Created: 2018/02/21 18:55:00 by brvalcas          #+#    #+#             */
+/*   Updated: 2018/02/21 19:22:38 by brvalcas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_striteri(char *s, void (*f)(unsigned int, char *))
+void	ft_print_words_tables(char **tab)
 {
 	int	i;
 
-	i = -1;
-	if (!s)
-		return ;
-	while (s[++i] != '\0')
-		f((unsigned int)i, &s[i]);
+	i = 0;
+	while (tab[i] != NULL)
+	{
+		ft_putstr_2(tab[i++]);
+		ft_putchar('\n');
+	}
 }
