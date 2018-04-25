@@ -15,12 +15,21 @@
 t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 {
 	t_list	*tmp;
+	t_list	*tmp2;
 
+	if (!lst)
+		return (NULL);
+	if (!(tmp = ft_memalloc(sizeof(t_list))))
+		return (NULL);
+	tmp = f(lst);
+	lst = lst->next;
+	tmp2 = tmp;
 	while (lst)
 	{
-		if (!(tmp = ft_memalloc(sizeof(t_list))))
+		if (!(tmp2->next = ft_memalloc(sizeof(t_list))))
 			return (NULL);
-		tmp = f(lst);
+		tmp2->next = f(lst);
+		tmp2 = tmp2->next;
 		lst = lst->next;
 	}
 	return (tmp);

@@ -34,7 +34,7 @@ $(NAME) : $(OBJET)
 comp : $(NAME) main.c
 	@gcc $(NAME) main.c -o $(EXE)
 exe : comp
-	@./$(EXE)
+	@./$(EXE) "                  olol" " " | cat -e
 debug : main.c
 	cpp main.c
 

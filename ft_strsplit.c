@@ -20,8 +20,7 @@ static	char	*ft_char_count(char const *s, size_t len)
 		return (NULL);
 	if (!(dest = ft_memalloc(len + 1)))
 		return (NULL);
-	dest = ft_strncpy(dest, s, len);
-	return (dest);
+	return (ft_strncpy(dest, s, len));
 }
 
 static	size_t	ft_word_count(char const *s, char c)
@@ -48,22 +47,24 @@ char			**ft_strsplit(char const *s, char c)
 	size_t	index;
 	size_t	i;
 	size_t	j;
+	size_t	len;
 	char	**str;
 
 	i = 0;
 	index = 0;
 	if (!s)
 		return (NULL);
+	len = ft_strlen((char *)s);
 	if (!(str = (char **)malloc(sizeof(char *) * ft_word_count(s, c) + 1)))
 		return (NULL);
-	while (i <= ft_strlen((char *)s))
+	while (i < len)
 	{
 		j = i;
-		while (s[i] != c && i <= ft_strlen((char *)s))
+		while (s[i] != c && i <= len)
 			i++;
-		if ((s[j] != c && s[i] == c) || s[i] == '\0')
+		if ((s[j] != c && s[i] == c) || !s[i])
 			str[index++] = ft_char_count(s + j, i - j);
-		while (s[i] == c && i <= ft_strlen((char *)s))
+		while (s[i] == c && i <= len)
 			i++;
 	}
 	str[index] = 0;
