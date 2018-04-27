@@ -51,12 +51,10 @@ exe : comp
 debug : main.c
 	cpp main.c
 
-
 clean :
 	@rm -f $(OBJET)
 
 fclean : clean
 	@rm -f $(NAME)
-
+	@rm -f $(EXE)
 re : fclean all
-.PHONY: all, $(NAME), comp, exe, debug, clean, fclean, re 
