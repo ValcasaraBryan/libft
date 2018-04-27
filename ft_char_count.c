@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striter.c                                       :+:      :+:    :+:   */
+/*   ft_char_count.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: brvalcas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/04/04 16:26:55 by brvalcas          #+#    #+#             */
-/*   Updated: 2018/04/04 16:26:56 by brvalcas         ###   ########.fr       */
+/*   Created: 2018/04/27 03:40:39 by brvalcas          #+#    #+#             */
+/*   Updated: 2018/04/27 03:40:42 by brvalcas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_striter(char *s, void (*f)(char *))
+char	*ft_char_count(char const *s, size_t len)
 {
-	int	i;
+	char	*dest;
 
-	i = 0;
-	if (!s || !f)
-		return ;
-	while (s[i])
-		f(&s[i++]);
+	if (!s)
+		return (NULL);
+	if (!(dest = ft_memalloc(len + 1)))
+		return (NULL);
+	return (ft_strncpy(dest, s, len));
 }

@@ -1,24 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striter.c                                       :+:      :+:    :+:   */
+/*   ft_word_count.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: brvalcas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/04/04 16:26:55 by brvalcas          #+#    #+#             */
-/*   Updated: 2018/04/04 16:26:56 by brvalcas         ###   ########.fr       */
+/*   Created: 2018/04/27 03:40:24 by brvalcas          #+#    #+#             */
+/*   Updated: 2018/04/27 03:40:26 by brvalcas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_striter(char *s, void (*f)(char *))
+size_t	ft_word_count(char const *s, char c)
 {
-	int	i;
+	size_t	j;
+	size_t	index;
 
-	i = 0;
-	if (!s || !f)
-		return ;
-	while (s[i])
-		f(&s[i++]);
+	j = 0;
+	index = 0;
+	if (!s)
+		return (0);
+	while (s[j] != '\0')
+	{
+		if (s[j] != c)
+			if (s[j + 1] == c || s[j + 1] == '\0')
+				index++;
+		j++;
+	}
+	return (index);
 }

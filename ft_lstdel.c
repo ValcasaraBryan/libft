@@ -20,7 +20,7 @@ void	ft_lstdel(t_list **alst, void (*del)(void *, size_t))
 	while (tmp)
 	{
 		del(tmp->content, tmp->content_size);
-		free(*alst);
+		free(tmp);
 		*alst = NULL;
 		tmp = tmp->next;
 	}

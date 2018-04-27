@@ -93,5 +93,7 @@ t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 **	Fonction Perso
 */
 void				ft_print_words_tables(char **tab);
+size_t				ft_word_count(char const *s, char c);
+char				*ft_char_count(char const *s, size_t len);
 
 #endif
