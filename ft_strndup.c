@@ -1,31 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd.c                                        :+:      :+:    :+:   */
+/*   ft_strndup.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: brvalcas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/04/13 17:30:30 by brvalcas          #+#    #+#             */
-/*   Updated: 2018/04/13 17:30:32 by brvalcas         ###   ########.fr       */
+/*   Created: 2018/05/08 18:06:51 by brvalcas          #+#    #+#             */
+/*   Updated: 2018/05/08 18:06:52 by brvalcas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd__list(t_list **alst, t_list *new)
+char	*ft_strndup(const char *src, size_t len)
 {
-	if (new)
-	{
-		new->next = *alst;
-		*alst = new;
-	}
-}
+	char	*str;
 
-void	ft_lstadd__gnl(t_gnl **alst, t_gnl *new)
-{
-	if (new)
-	{
-		new->next = *alst;
-		*alst = new;
-	}
+	if (!(str = ft_memalloc(len + 1)))
+		return (NULL);
+	if (len <= ft_strlen(src))
+		return (ft_strncpy(str, src, len));
+	else
+		return (ft_strcpy(str, src));
 }
