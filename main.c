@@ -1,43 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd.c                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: brvalcas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/04/13 17:30:30 by brvalcas          #+#    #+#             */
-/*   Updated: 2018/04/13 17:30:32 by brvalcas         ###   ########.fr       */
+/*   Created: 2018/05/09 16:22:52 by brvalcas          #+#    #+#             */
+/*   Updated: 2018/05/09 16:22:53 by brvalcas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd__list(t_list **alst, t_list *new)
+int		main(int argc, char **argv)
 {
-	t_list	*tmp;
-
-	tmp = *alst;
-	if (!*alst)
-		*alst = new;
-	else
-	{
-		while (tmp->next)
-			tmp = tmp->next;
-		tmp->next = new;
-	}
-}
-
-void	ft_lstadd__gnl(t_gnl **alst, t_gnl *new)
-{
-	t_gnl	*tmp;
-
-	tmp = *alst;
-	if (!*alst)
-		*alst = new;
-	else
-	{
-		while (tmp->next)
-			tmp = tmp->next;
-		tmp->next = new;
-	}
+	t_list	*new;
+	t_list	*list;
+	t_list	*list2;
+	new = ft_lstnew("salut", 6);
+	list = ft_lstnew("bonjour", 7);
+	list2 = ft_lstnew("coucou", 6);
+	ft_lstadd__list(&new, list);
+	ft_lstadd__list(&new, list2);
+	ft_print_lst__list(new);
+	return (0);
 }

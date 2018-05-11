@@ -1,43 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd.c                                        :+:      :+:    :+:   */
+/*   ft_strnjoin.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: brvalcas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/04/13 17:30:30 by brvalcas          #+#    #+#             */
-/*   Updated: 2018/04/13 17:30:32 by brvalcas         ###   ########.fr       */
+/*   Created: 2018/05/10 20:50:27 by brvalcas          #+#    #+#             */
+/*   Updated: 2018/05/10 20:50:28 by brvalcas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd__list(t_list **alst, t_list *new)
+char	*ft_strnjoin(char const *s1, char const *s2, size_t len)
 {
-	t_list	*tmp;
+	char	*str;
 
-	tmp = *alst;
-	if (!*alst)
-		*alst = new;
-	else
-	{
-		while (tmp->next)
-			tmp = tmp->next;
-		tmp->next = new;
-	}
-}
-
-void	ft_lstadd__gnl(t_gnl **alst, t_gnl *new)
-{
-	t_gnl	*tmp;
-
-	tmp = *alst;
-	if (!*alst)
-		*alst = new;
-	else
-	{
-		while (tmp->next)
-			tmp = tmp->next;
-		tmp->next = new;
-	}
+	if (!s1 || !s2)
+		return (NULL);
+	if (!(str = ft_memalloc(len + 1)))
+		return (NULL);
+	str = ft_strcat(ft_strncpy(str, s1, len), s2);
+	return (str);
 }

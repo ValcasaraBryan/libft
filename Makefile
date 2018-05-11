@@ -27,7 +27,7 @@ SRC = ft_atoi.c ft_bzero.c ft_isalnum.c\
 	ft_strrchr.c ft_strsplit.c ft_strstr.c ft_strsub.c ft_strtrim.c\
 	ft_tolower.c ft_toupper.c ft_lstdelone.c ft_lstadd.c ft_lstiter.c\
 	ft_lstmap.c ft_lstdel.c ft_print_words_tables.c ft_strndup.c\
-	ft_print_lst.c
+	ft_print_lst.c ft_strnjoin.c ft_strnchr.c
 
 OBJET = $(SRC:.c=.o)
 

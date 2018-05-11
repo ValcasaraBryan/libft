@@ -16,22 +16,19 @@ int		ft_print_lst__gnl(t_gnl *list)
 {
 	if (list)
 	{
+		ft_putchar('\n');
 		while (list)
 		{
 			ft_putstr("str = [");
 			ft_putstr(list->str);
 			ft_putchar(']');
 			ft_putchar('\n');
-			ft_putstr("i   = [");
-			ft_putnbr(list->i);
-			ft_putchar(']');
-			ft_putchar('\n');
 			ft_putstr("fd  = [");
 			ft_putnbr(list->multi_fd);
 			ft_putchar(']');
 			ft_putchar('\n');
-			ft_putstr("ret = [");
-			ft_putnbr(list->ret);
+			ft_putstr("len = [");
+			ft_putnbr(list->len);
 			ft_putchar(']');
 			ft_putchar('\n');
 			ft_putchar('\n');

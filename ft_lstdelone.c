@@ -19,8 +19,8 @@ void	ft_lstdelone(t_list **alst, void (*del)(void *, size_t))
 	tmp = *alst;
 	if (alst)
 	{
+		*alst = (*alst)->next;
 		del(tmp->content, tmp->content_size);
-		free(*alst);
-		*alst = NULL;
+		ft_memdel((void **)&tmp);
 	}
 }

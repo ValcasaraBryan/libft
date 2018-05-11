@@ -93,10 +93,12 @@ t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 */
 typedef	struct		s_gnl
 {
-	int				i;
 	char			*str;
+	int				len;
 	int				multi_fd;
-	int				ret;
+
+	t_list			*l_str;
+	
 	struct	s_gnl	*next;
 }					t_gnl;
 
@@ -105,5 +107,7 @@ char				*ft_strndup(const char *src, size_t len);
 int					ft_print_lst__list(t_list *list);
 int					ft_print_lst__gnl(t_gnl *list);
 void				ft_lstadd__gnl(t_gnl **alst, t_gnl *new);
+char				*ft_strnjoin(char const *s1, char const *s2, size_t len);
+size_t				ft_strnchr(const char *s, int c);
 
 #endif
