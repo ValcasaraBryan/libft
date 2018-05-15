@@ -71,14 +71,14 @@ int		ft_print_lst__list(t_list *list)
 			printf("->[%p]", list->next);
 			list = list->next;
 		}
-		printf("->[%p]\n", list->next);
+		printf("->[%p]\n            ", list->next);
 		list = head;
-		ft_putstr("\n");
 		while (list)
 		{
-			ft_print_words_tables(ft_strsplit((char *)list->content, '\n'));
+			printf("[%s]          ", (char *)list->content);
 			list = list->next;
 		}
+		printf("\n");
 		list = head;
 		return (0);
 	}

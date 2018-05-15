@@ -20,8 +20,8 @@ int		main(int argc, char **argv)
 	new = ft_lstnew("salut", 6);
 	list = ft_lstnew("bonjour", 7);
 	list2 = ft_lstnew("coucou", 6);
-	ft_lstadd__list(&new, list);
-	ft_lstadd__list(&new, list2);
+	ft_lstadd__list(&new->next, list);
+	ft_lstadd__list(&new->next->next, list2);
 	ft_print_lst__list(new);
 	return (0);
 }
