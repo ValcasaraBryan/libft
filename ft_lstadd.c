@@ -23,7 +23,7 @@ void	ft_lstadd__list(t_list **alst, t_list *new)
 	{
 		while (tmp->next)
 			tmp = tmp->next;
-		tmp->next = new;
+		tmp = new;
 	}
 }
 
@@ -38,6 +38,6 @@ void	ft_lstadd__gnl(t_gnl **alst, t_gnl *new)
 	{
 		while (tmp->next)
 			tmp = tmp->next;
-		tmp->next = new;
+		tmp = new;
 	}
 }

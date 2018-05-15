@@ -20,14 +20,17 @@ size_t	ft_strnchr(const char *s, int c)
 	char	d;
 
 	i = 0;
-	j = ft_strlen(s);
+	if (s)
+		j = ft_strlen(s);
+	else
+		j = 0;
 	str = (char *)s;
 	d = (char)c;
 	while (i <= j)
 	{
 		if (str[i] == d)
-			return (i );
+			return (i);
 		i++;
 	}
-	return (i);
+	return (0);
 }

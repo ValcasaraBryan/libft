@@ -96,10 +96,9 @@ typedef	struct		s_gnl
 	char			*str;
 	int				len;
 	int				multi_fd;
-
 	t_list			*l_str;
-	
 	struct	s_gnl	*next;
+	struct	s_gnl	*prev;
 }					t_gnl;
 
 void				ft_print_words_tables(char **tab);

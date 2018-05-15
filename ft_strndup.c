@@ -15,10 +15,15 @@
 char	*ft_strndup(const char *src, size_t len)
 {
 	char	*str;
+	size_t	i;
 
+	if (src)
+		i = ft_strlen(src);
+	else
+		i = len;
 	if (!(str = ft_memalloc(len + 1)))
 		return (NULL);
-	if (len <= ft_strlen(src))
+	if (len <= i)
 		return (ft_strncpy(str, src, len));
 	else
 		return (ft_strcpy(str, src));

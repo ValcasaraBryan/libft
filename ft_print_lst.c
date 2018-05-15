@@ -14,26 +14,44 @@
 
 int		ft_print_lst__gnl(t_gnl *list)
 {
+	t_gnl *head;
+
 	if (list)
 	{
+		head = list;
 		ft_putchar('\n');
-		while (list)
+		ft_putstr("======================================");
+		ft_putchar('\n');
+		ft_putstr("fd = [");
+		ft_putnbr(list->multi_fd);
+		ft_putchar(']');
+		ft_putchar('\n');
+		ft_putchar('\n');
+		printf("t_gnl->[%p]", list);
+		while (list->next)
 		{
-			ft_putstr("str = [");
-			ft_putstr(list->str);
-			ft_putchar(']');
-			ft_putchar('\n');
-			ft_putstr("fd  = [");
-			ft_putnbr(list->multi_fd);
-			ft_putchar(']');
-			ft_putchar('\n');
-			ft_putstr("len = [");
-			ft_putnbr(list->len);
-			ft_putchar(']');
-			ft_putchar('\n');
-			ft_putchar('\n');
+			printf("->[%p]", list->next);
 			list = list->next;
 		}
+		printf("->[%p]\n", list->next);
+		list = head;
+		ft_putstr("fd =         ");
+		while (list)
+		{
+			ft_putchar('[');
+			ft_putnbr(list->multi_fd);
+			ft_putchar(']');
+			ft_putstr("                ");
+			list = list->next;
+		}
+		list = head;
+		ft_putchar('\n');
+		ft_print_lst__list(list->l_str);
+		ft_putchar('\n');
+		ft_putchar('\n');
+		ft_putstr("======================================");
+		ft_putchar('\n');
+		list = list->next;
 		return (0);
 	}
 	ft_putstr("\n--- Aucun Maillon ---\n");
@@ -42,17 +60,26 @@ int		ft_print_lst__gnl(t_gnl *list)
 
 int		ft_print_lst__list(t_list *list)
 {
+	t_list *head;
+
 	if (list)
 	{
-		while (list)
+		head = list;
+		printf("t_list->[%p]", list);
+		while (list->next)
 		{
-			ft_putstr("str = [");
-			ft_putstr(list->content);
-			ft_putstr("] [");
-			ft_putnbr(list->content_size);
-			ft_putstr("]\n");
+			printf("->[%p]", list->next);
 			list = list->next;
 		}
+		printf("->[%p]\n", list->next);
+		list = head;
+		ft_putstr("\n");
+		while (list)
+		{
+			ft_print_words_tables(ft_strsplit((char *)list->content, '\n'));
+			list = list->next;
+		}
+		list = head;
 		return (0);
 	}
 	ft_putstr("\n--- Aucun Maillon ---\n");
