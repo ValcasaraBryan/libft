@@ -22,5 +22,9 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		+ ft_strlen(s2) + 1)))
 		return (NULL);
 	str = ft_strcat(ft_strcpy(str, s1), s2);
+	if (s1)
+		free((void *)s1);
+	if (s2)
+		free((void *)s2);
 	return (str);
 }
