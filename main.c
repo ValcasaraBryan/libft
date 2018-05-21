@@ -14,14 +14,5 @@
 
 int		main(int argc, char **argv)
 {
-	t_list	*new;
-	t_list	*list;
-	t_list	*list2;
-	new = ft_lstnew("salut", 6);
-	list = ft_lstnew("bonjour", 7);
-	list2 = ft_lstnew("coucou", 6);
-	ft_lstadd__list(&new->next, list);
-	ft_lstadd__list(&new->next->next, list2);
-	ft_print_lst__list(new);
 	return (0);
 }

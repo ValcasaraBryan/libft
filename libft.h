@@ -91,15 +91,6 @@ t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 /*
 **	Fonction Perso
 */
-typedef	struct		s_gnl
-{
-	char			*str;
-	int				len;
-	int				multi_fd;
-	t_list			*l_str;
-	struct	s_gnl	*next;
-}					t_gnl;
-
 void				ft_print_words_tables(char **tab);
 char				*ft_strndup(const char *src, size_t len);
 int					ft_print_lst(t_list *list);

@@ -32,5 +32,5 @@ size_t	ft_strnchr(const char *s, int c)
 			return (i);
 		i++;
 	}
-	return (0);
+	return (-1);
 }

@@ -18,8 +18,8 @@ char	*ft_strnjoin(char const *s1, char const *s2, size_t len)
 
 	if (!s1 || !s2)
 		return (NULL);
-	if (!(str = ft_memalloc(len + 1)))
+	if (!(str = ft_memalloc(ft_strlen(s1) + len + 1)))
 		return (NULL);
-	str = ft_strcat(ft_strncpy(str, s1, len), s2);
+	str = ft_strncat(ft_strcpy(str, s1), s2, len);
 	return (str);
 }
