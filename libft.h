@@ -95,6 +95,6 @@ void				ft_print_words_tables(char **tab);
 char				*ft_strndup(const char *src, size_t len);
 int					ft_print_lst(t_list *list);
 char				*ft_strnjoin(char const *s1, char const *s2, size_t len);
-size_t				ft_strnchr(const char *s, int c);
+int					ft_strnchr(const char *s, int c, size_t len)
 
 #endif
