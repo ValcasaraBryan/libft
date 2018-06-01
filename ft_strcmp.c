@@ -23,16 +23,11 @@ int		ft_strcmp(const char *s1, const char *s2)
 	j = 0;
 	dest = (unsigned char *)s1;
 	src = (unsigned char *)s2;
-	if (dest)
+	while (dest[i])
 	{
-		while (dest[i])
-		{
-			if (dest[i] != src[i])
-				return (j = dest[i] - src[i]);
-			i++;
-		}
-		return (j = dest[i] - src[i]);
+		if (dest[i] != src[i])
+			return (j = dest[i] - src[i]);
+		i++;
 	}
-	else
-		return (-1);
+	return (j = dest[i] - src[i]);
 }
