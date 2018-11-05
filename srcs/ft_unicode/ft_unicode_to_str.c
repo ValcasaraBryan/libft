@@ -17,7 +17,7 @@ int			*tab_unix(int octet, int len, wchar_t str)
 	int		*tab;
 	long	mask;
 	long	mask_byte;
-	
+
 	if (octet == 1)
 		return (tab = ft_putval_tab(str, octet));
 	if (!(mask = ft_set_octet(octet)))
@@ -43,33 +43,32 @@ static char	*tampon(int octet, int *tab, wchar_t *str)
 	}
 	else
 	{
+		free(tab);
 		*tmp = *str;
 		return (tmp);
 	}
 }
 
-char		*ft_unicode_to_str(wchar_t *str, unsigned int precision)
+int			ft_unicode_to_str(char **data, wchar_t *str, unsigned int precision)
 {
-	char	*data;
 	int		total;
 	int		len;
 	int		octet;
 
 	if (!str)
-		return (NULL);
+		return (0);
 	total = 0;
-	data = ft_strdup("");
 	while (*str)
 	{
 		len = ft_wchar_len(*str);
 		total += (octet = ft_wset_plage_byte(len));
 		if (octet == -1)
-			return (data);
+			return (-1);
 		if (total > precision && precision > 0)
-			return (data);
-		data = ft_strjoin_free(data, tampon(octet,
+			return (total);
+		*data = ft_strjoin_free(*data, tampon(octet,
 				tab_unix(octet, len, *str), str), 3);
 		str++;
 	}
-	return (data);
+	return (total);
 }

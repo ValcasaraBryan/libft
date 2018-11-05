@@ -20,6 +20,9 @@
 # include <sys/stat.h>
 # include <fcntl.h>
 # include <wchar.h>
+# include <stdio.h>
+# include <locale.h>
+# include <limits.h>
 
 typedef struct		s_list
 {
@@ -135,7 +138,8 @@ unsigned long long	ft_atoull(const char *str);
 */
 int					*ft_putval_tab(wchar_t c, int octet);
 int					ft_putwchar(int *tab, unsigned int octet);
-char				*ft_unicode_to_str(wchar_t *str, unsigned int precision);
+int					ft_unicode_to_str(char **data, wchar_t *str,
+					unsigned int precision);
 long				ft_set_octet(int octet);
 long				ft_set_unichar(long masque_byte, int len, wchar_t c);
 int					*tab_unix(int octet, int len, wchar_t str);
@@ -144,11 +148,11 @@ int					ft_wset_plage_byte(int len);
 /*
 **	maths
 */
-long long			ft_absolue(long nb);
+long long			ft_absolue(long long nb);
 int					pgcd(int x, int y);
 int					ft_sqrt(int nb);
 int					ft_recursive_factorial(int nb);
-int					ft_recursive_power(int nb, int power);
+long				ft_recursive_power(long nb, int power);
 int					ft_fibonacci(int index);
 int					ft_is_prime(int nb);
 int					ft_find_next_prime(int nb);
