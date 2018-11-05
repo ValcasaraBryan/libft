@@ -19,7 +19,7 @@ int			pgcd(int x, int y)
 	int		i;
 
 	if ((x || y) <= 0)
-		return (0);
+		return (-1);
 	petit = (x > y) ? y : x;
 	grand = (x > y) ? x : y;
 	res_petit = petit;
