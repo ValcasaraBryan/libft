@@ -114,7 +114,18 @@ SRC =	srcs/ft_is/ft_isalnum.c\
 		srcs/maths/ft_recursive_power.c\
 		srcs/maths/ft_fibonacci.c\
 		srcs/maths/ft_is_prime.c\
-		srcs/maths/ft_find_next_prime.c
+		srcs/maths/ft_find_next_prime.c\
+		\
+		srcs/ft_printf/ft_printf.c\
+		srcs/ft_printf/argument_flag.c\
+		srcs/ft_printf/init_list.c\
+		srcs/ft_printf/tab_option.c\
+		srcs/ft_printf/option_value.c\
+		srcs/ft_printf/free_data.c\
+		srcs/ft_printf/conversion.c\
+		srcs/ft_printf/conversion_two.c\
+		srcs/ft_printf/conversion_three.c\
+		srcs/ft_printf/conversion_four.c
 
 OBJET = $(SRC:.c=.o)
 
@@ -155,4 +166,5 @@ clean :
 fclean : clean
 	@rm -f $(NAME)
 	@rm -f $(EXE)
+
 re : fclean all
