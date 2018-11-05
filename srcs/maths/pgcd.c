@@ -10,8 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/libft.h"
-
 int			pgcd(int x, int y)
 {
 	int		res_petit;
@@ -20,6 +18,8 @@ int			pgcd(int x, int y)
 	int		grand;
 	int		i;
 
+	if ((x || y) <= 0)
+		return (0);
 	petit = (x > y) ? y : x;
 	grand = (x > y) ? x : y;
 	res_petit = petit;
@@ -27,15 +27,10 @@ int			pgcd(int x, int y)
 	i = petit + 1;
 	while (i-- > 1)
 	{
-		if ((res_petit * i) == petit && (res_grand * i) == grand)
-		{
-			ft_putnbr(i);
-			ft_putchar('\n');
-			return (i);
-		}
 		res_petit = petit / i;
 		res_grand = grand / i;
+		if ((res_petit * i) == petit && (res_grand * i) == grand)
+			return (i);
 	}
-	ft_putstr_len("1\n", 2, 1);
 	return (1);
 }
