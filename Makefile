@@ -149,11 +149,9 @@ exe : comp
 debug : main.c
 	cpp main.c
 
-norm_line: norm
+norm:
 	#------- only ["function"] and ["line has"] -------#
-	@clear
-	@cat norm.txt | grep -v "C++ comment" | grep -v "bad indentation" | grep -v "multiple empty lines"
-	@rm norm.txt
+	@norminette **/*/*.[c.h]
 
 norm_cat: norm 
 	@clear
