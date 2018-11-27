@@ -12,7 +12,10 @@
 
 NAME = libft.a
 
-EXE = executable
+EXE = 0
+
+ARG = 0
+ARG_2 = 0
 
 SRC =	srcs/ft_is/ft_isalnum.c\
 		srcs/ft_is/ft_isalpha.c\
@@ -142,12 +145,30 @@ $(NAME) : $(OBJET)
 %.o:%.c %.h
 	@clang $(FLAG) -o $@ -c $<
 
-comp : $(NAME) main.c
-	@gcc $(NAME) main.c -o $(EXE)
+comp : $(NAME)
+ifeq ($(EXE), 0)
+	@echo "Usage : La variable EXE n'est pas initialisee"
+else
+	@gcc $(NAME) ~/Documents/libft/Programme/main/main_$(EXE).c -o ~/Documents/libft/Programme/$(EXE)
+endif
 exe : comp
-	@./$(EXE)
-debug : main.c
-	cpp main.c
+ifneq ($(EXE), 0)
+ifeq ($(ARG), 0)
+	@echo "Usage : La variable ARG n'est pas initialisee"
+else
+ifeq ($(ARG_2), 0)
+	@~/Documents/libft/Programme/$(EXE) $(ARG)
+else
+	@~/Documents/libft/Programme/$(EXE) $(ARG) $(ARG_2)
+endif
+endif
+endif
+debug :
+ifneq ($(EXE), 0)
+	cpp ~/Documents/libft/Programme/main/main_$(EXE).c
+else
+	@echo "Usage : La variable EXE n'est pas initialisee"
+endif
 
 norm:
 	#------- only ["function"] and ["line has"] -------#
