@@ -106,14 +106,16 @@ int						option_char(t_string *list, wchar_t c)
 		list->tab[LARGEUR];
 	if (list->tab[LEFT - 1] == LEFT)
 	{
-		if ((retour_err(&i, ft_putwchar(tab_unix(octet, len, c), octet))) == -1)
+		if ((retour_err(&i, ft_putwchar(tab_unix(octet, len, c), octet,
+			list->fd))) == -1)
 			return (-1);
 		i += print_zero_space_char(list, octet);
 	}
 	else if (list->tab[LEFT - 1] == 0)
 	{
 		i += print_zero_space_char(list, octet);
-		if ((retour_err(&i, ft_putwchar(tab_unix(octet, len, c), octet))) == -1)
+		if ((retour_err(&i, ft_putwchar(tab_unix(octet, len, c), octet,
+			list->fd))) == -1)
 			return (-1);
 	}
 	return (i);

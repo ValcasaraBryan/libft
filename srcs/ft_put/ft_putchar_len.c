@@ -19,7 +19,7 @@ int			ft_putchar_len(char c, int len, int fd)
 
 	str = NULL;
 	if (len == 1)
-		return (ft_putchar(c));
+		return (ft_putchar_fd(c, fd));
 	if (len == 0)
 		return (0);
 	if (len < 0)
