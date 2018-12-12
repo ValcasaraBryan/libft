@@ -21,7 +21,7 @@ int					ft_putwchar(int *tab, unsigned int octet, int fd)
 	ret = 0;
 	while (++i < octet)
 	{
-		if (ft_putchar_fd((char)&tab[i], fd) == -1)
+		if (ft_putchar_fd((char)tab[i], fd) == -1)
 		{
 			free(tab);
 			return (-1);
