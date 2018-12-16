@@ -72,8 +72,7 @@ int						ft_fprintf(const char *format, int fd, ...)
 	unsigned int		percent;
 
 	i = 0;
-	if (!(percent = nb_percent((char *)format)))
-		return (-1);
+	percent = nb_percent((char *)format);
 	if (percent)
 	{
 		va_start(ap, fd);
