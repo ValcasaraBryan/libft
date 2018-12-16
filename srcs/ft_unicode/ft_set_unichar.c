@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/libft.h"
+#include "libft.h"
 
 long				ft_set_unichar(long masque_byte, int len, wchar_t c)
 {

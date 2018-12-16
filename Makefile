@@ -132,10 +132,9 @@ SRC =	srcs/ft_is/ft_isalnum.c\
 
 OBJET = $(SRC:.c=.o)
 
-HEAD = -I includes/libft.h
+INCLUDES = includes
 
-CFLAGS = -Wall -Wextra -Werror
-FLAG = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -I $(INCLUDES)
 CC = gcc
 
 all : $(NAME)
@@ -144,8 +143,7 @@ $(NAME) : $(OBJET)
 	@ar rc $@ $^
 	@ranlib $@
 
-%.o:%.c %.h
-	#gcc $(FLAG) -o $@ -c $<
+$(OBJET):$(INCLUDES)
 
 comp : $(NAME)
 ifeq ($(EXE), 0)

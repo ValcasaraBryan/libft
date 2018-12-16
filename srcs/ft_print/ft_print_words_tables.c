@@ -10,7 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/libft.h"
+#include "libft.h"
+#include "ft_printf.h"
 
 void	ft_print_words_tables(char **tab)
 {
@@ -18,12 +19,5 @@ void	ft_print_words_tables(char **tab)
 
 	i = 0;
 	while (tab[i])
-	{
-		ft_putnbr(i);
-		ft_putstr(" = ");
-		ft_putchar('[');
-		ft_putstr(tab[i++]);
-		ft_putchar(']');
-		ft_putchar('\n');
-	}
+		ft_printf("%d = [%d]\n", i, tab[i]);
 }

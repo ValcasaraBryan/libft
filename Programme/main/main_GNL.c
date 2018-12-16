@@ -23,8 +23,9 @@ int         main(int argc, char **argv)
 
     if (argc != 2)
         return (0);
+    ret = 0;
     fd = open(argv[1], O_RDWR);   
-    while ((ret = get_next_line(fd, &line)))
+    while ((ret = get_next_line(0, &line)) > 0)
     {
         ft_printf("len = %d | retour = %d\n", ft_printf("%s\n", line), ret);
         free(line);

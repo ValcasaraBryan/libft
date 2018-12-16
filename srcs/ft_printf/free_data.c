@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/ft_printf.h"
+#include "ft_printf.h"
 
 int						free_data(t_string *list, unsigned int nb_percent,
 						int ret, va_list ap)
