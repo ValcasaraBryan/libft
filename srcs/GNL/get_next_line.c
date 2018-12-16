@@ -52,9 +52,9 @@ int					ft_add_line(char **rest, char *buf, const int fd)
 			tmp = ft_strjoin(*rest, buf);
 			free(*rest);
 			*rest = tmp;
-			if ((ft_strnchr(buf, '\n', ret) >= 0))
-				return (ret);
 		}
+		if ((ft_strnchr(buf, '\n', ret) >= 0))
+			return (ret);
 	}
 	return (ret);
 }
