@@ -21,14 +21,14 @@ int						ft_printf(const char *format, ...)
 	unsigned int		percent;
 
 	i = 0;
-	if ((percent = nb_percent((char *)format)) == -1)
+	if (!(percent = nb_percent((char *)format)))
 		return (-1);
 	if (percent)
 	{
 		va_start(ap, format);
 		if (!(list = (t_string *)malloc(sizeof(t_string) * percent)))
 			return (-1);
-		while (i < percent)
+		while (i < (int)percent)
 			list[i++].fd = 1;
 		if ((ret = parsing(format, list, ap, percent)) == -1)
 			return (ret);

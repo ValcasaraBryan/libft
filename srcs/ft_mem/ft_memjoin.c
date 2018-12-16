@@ -28,9 +28,9 @@ void		*ft_memjoin(void *dst, size_t len_dst, void *src, size_t len_src)
 		return (dst);
 	if (!(str = ft_memalloc(len_dst + len_src + 1)))
 		return (NULL);
-	while (j < len_src)
+	while (j < (int)len_src)
 	{
-		while (i < len_dst)
+		while (i < (int)len_dst)
 		{
 			str[i] = dest[i];
 			i++;

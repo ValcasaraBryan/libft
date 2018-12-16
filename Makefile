@@ -134,7 +134,9 @@ OBJET = $(SRC:.c=.o)
 
 HEAD = -I includes/libft.h
 
+CFLAGS = -Wall -Wextra -Werror
 FLAG = -Wall -Wextra -Werror
+CC = gcc
 
 all : $(NAME)
 
@@ -143,7 +145,7 @@ $(NAME) : $(OBJET)
 	@ranlib $@
 
 %.o:%.c %.h
-	@clang $(FLAG) -o $@ -c $<
+	#gcc $(FLAG) -o $@ -c $<
 
 comp : $(NAME)
 ifeq ($(EXE), 0)

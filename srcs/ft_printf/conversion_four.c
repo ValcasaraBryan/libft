@@ -48,7 +48,6 @@ char					*string_unix(va_list ap, t_string *list)
 {
 	wchar_t				*str;
 	char				*data;
-	int					len;
 	int					octet;
 	int					i;
 

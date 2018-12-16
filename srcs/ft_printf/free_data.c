@@ -50,6 +50,7 @@ char					add_sign(t_string *list)
 {
 	char				c;
 
+	c = 0;
 	if (list->tab[SIGN - 1] == SIGN)
 	{
 		if (*list->data == '-')
@@ -71,14 +72,14 @@ int						ft_fprintf(const char *format, int fd, ...)
 	unsigned int		percent;
 
 	i = 0;
-	if ((percent = nb_percent((char *)format)) == -1)
+	if (!(percent = nb_percent((char *)format)))
 		return (-1);
 	if (percent)
 	{
 		va_start(ap, fd);
 		if (!(list = (t_string *)malloc(sizeof(t_string) * percent)))
 			return (-1);
-		while (i < percent)
+		while (i < (int)percent)
 			list[i++].fd = fd;
 		if ((ret = parsing(format, list, ap, percent)) == -1)
 			return (ret);

@@ -64,7 +64,7 @@ int			ft_unicode_to_str(char **data, wchar_t *str, unsigned int precision)
 		total += (octet = ft_wset_plage_byte(len));
 		if (octet == -1)
 			return (-1);
-		if (total > precision && precision > 0)
+		if (total > (int)precision && precision > 0)
 			return (total);
 		*data = ft_strjoin_free(*data, tampon(octet,
 				tab_unix(octet, len, *str), str), 3);

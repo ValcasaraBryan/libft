@@ -19,7 +19,7 @@ int					ft_putwchar(int *tab, unsigned int octet, int fd)
 
 	i = -1;
 	ret = 0;
-	while (++i < octet)
+	while (++i < (int)octet)
 	{
 		if (ft_putchar_fd((char)tab[i], fd) == -1)
 		{
