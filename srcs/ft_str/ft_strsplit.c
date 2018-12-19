@@ -55,7 +55,7 @@ char			**ft_strsplit(char const *s, char c)
 	if (!s)
 		return (NULL);
 	len = ft_strlen((char *)s);
-	if (!(str = (char **)malloc(sizeof(char *) * ft_word_count(s, c) + 1)))
+	if (!(str = (char **)malloc(sizeof(char *) * (ft_word_count(s, c) + 1))))
 		return (NULL);
 	while (i < len)
 	{

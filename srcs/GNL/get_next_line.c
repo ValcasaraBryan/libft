@@ -34,6 +34,7 @@ int					get_next_line(const int fd, char **line)
 		else
 			return (1);
 	}
+	ft_free_list(&list, fd);
 	return (-1);
 }
 
