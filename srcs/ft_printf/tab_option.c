@@ -21,7 +21,7 @@ void					flag_optional(char *arg, int len, t_string *list)
 	{
 		if (arg[i] == '-')
 			list->tab[LEFT - 1] = LEFT;
-		if (arg[i] == '0' 
+		if (arg[i] == '0'
 			&& ((i - 1 >= 0) ? arg[i - 1] != '.' : 1))
 			list->tab[ZERO - 1] = ZERO;
 		if (arg[i] == ' ')

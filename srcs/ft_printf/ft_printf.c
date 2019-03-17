@@ -28,12 +28,7 @@ int						ft_printf(const char *format, ...)
 		if (!(list = (t_string *)malloc(sizeof(t_string) * percent)))
 			return (-1);
 		while (++i < (int)percent)
-		{
-			list[i].data = NULL;
-			list[i].len = 0;
-			list[i].index = 0;
 			list[i].fd = 1;
-		}
 		if ((ret = parsing(format, list, ap, percent)) == -1)
 			return (ret);
 		free_data(list, percent, 0, ap);
