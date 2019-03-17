@@ -65,6 +65,7 @@ void					priority_precision_largeur_sign_hashtag_(t_string *list)
 		&& list->tab[HASHTAG - 1] == HASHTAG && list->tab[LARGEUR] > 0
 			&& list->tab[LARGEUR] + 2 > list->len ? list->tab[LARGEUR] - 2
 				: list->tab[LARGEUR];
+	list->tab[LARGEUR] = (list->tab[LARGEUR] < 0) ? 0 : list->tab[LARGEUR];
 }
 
 void					priority_precision_largeur(t_string *list)

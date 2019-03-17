@@ -48,7 +48,7 @@ static char					*conv(unsigned long long val_base,
 		else
 			str[i] = nb + '0' - val_base + 1;
 	}
-	else
+	else if (i == 0)
 		str[i] = nb + '0';
 	return (str);
 }
@@ -75,7 +75,7 @@ static char					*conv_maj(unsigned long long val_base,
 		else
 			str[i] = nb + '0' - val_base + 1;
 	}
-	else
+	else if (i == 0)
 		str[i] = nb + '0';
 	return (str);
 }
@@ -83,15 +83,15 @@ static char					*conv_maj(unsigned long long val_base,
 char						*ft_ulltoa_base(unsigned long long nb,
 				const char *base)
 {
-	unsigned long long		val_base;
 	unsigned long long		i;
+	int						val_base;
 	char					*str;
 
-	val_base = ft_strlen(base);
-	i = ft_len(nb, val_base);
+	val_base = (base) ? ft_strlen(base) : 0;
+	i = ft_len(nb, (unsigned long long)val_base);
 	if (!(str = ft_memalloc(i + 2)))
 		return (NULL);
-	if (base[10] == 'A')
+	if (val_base > 10 && val_base > 0 && base[10] == 'A')
 		conv_maj(val_base, nb, i, str);
 	else
 		conv(val_base, nb, i, str);

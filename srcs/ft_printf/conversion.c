@@ -21,7 +21,7 @@ char					*string_s(va_list ap)
 	if (str)
 		return (ft_strdup(str));
 	else
-		return (str);
+		return (NULL);
 }
 
 char					conv_c(va_list ap)
