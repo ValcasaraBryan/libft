@@ -139,15 +139,18 @@ OBJET = $(SRC:.c=.o)
 INCLUDES = includes
 
 CFLAGS = -Wall -Wextra -Werror -I $(INCLUDES)
-CC = gcc
+CC = @gcc
+
 
 all : $(NAME)
+
+$(OBJET): includes/libft.h includes/ft_printf.h includes/get_next_line.h Makefile
 
 $(NAME) : $(OBJET)
 	@ar rc $@ $^
 	@ranlib $@
+	@echo "Compilation libft done !"
 
-$(OBJET):$(INCLUDES)
 
 comp : $(NAME)
 ifeq ($(EXE), 0)
