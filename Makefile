@@ -141,6 +141,7 @@ INCLUDES = includes
 CFLAGS = -Wall -Wextra -Werror -I $(INCLUDES)
 CC = @gcc
 
+name = true
 
 all : $(NAME)
 
@@ -149,8 +150,7 @@ $(OBJET): includes/libft.h includes/ft_printf.h includes/get_next_line.h Makefil
 $(NAME) : $(OBJET)
 	@ar rc $@ $^
 	@ranlib $@
-	@echo "Compilation libft done !"
-
+	@echo "Creation libft.a Done !"
 
 comp : $(NAME)
 ifeq ($(EXE), 0)
