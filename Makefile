@@ -132,22 +132,27 @@ SRC =	srcs/free/free_tab_str.c\
 		srcs/ft_printf/conversion.c\
 		srcs/ft_printf/conversion_two.c\
 		srcs/ft_printf/conversion_three.c\
-		srcs/ft_printf/conversion_four.c
+		srcs/ft_printf/conversion_four.c\
+		\
+		srcs/ft_len/ft_len_tab_str.c
 
 OBJET = $(SRC:.c=.o)
 
 INCLUDES = includes
 
 CFLAGS = -Wall -Wextra -Werror -I $(INCLUDES)
-CC = gcc
+CC = @gcc
 
 all : $(NAME)
+
+$(OBJET): includes/libft.h includes/ft_printf.h includes/get_next_line.h Makefile
 
 $(NAME) : $(OBJET)
 	@ar rc $@ $^
 	@ranlib $@
+	@echo "Creation libft.a	Done !"
+	@echo "-------------------------------"
 
-$(OBJET):$(INCLUDES)
 
 comp : $(NAME)
 ifeq ($(EXE), 0)
